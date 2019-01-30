@@ -6,7 +6,6 @@ les factures
 
 @section('content')
 <div class="columns">
-        @include('layouts.left_column')
         <div class="column is-10">
                 <div class="content is-medium">
                         <ul>

@@ -6,7 +6,6 @@ utilisateur : {{ ucfirst($user->firstname) }} {{ strtoupper($user->lastname) }}
 
 @section('content')
 <div class="columns">
-    @include('layouts.left_column')
     <div class="column is-10">
         <div class="columns is-marginless">
             <div class="column is-5">
@@ -40,11 +39,6 @@ utilisateur : {{ ucfirst($user->firstname) }} {{ strtoupper($user->lastname) }}
                         </div>
                     </div>
                 @endif
-            </div>
-        </div>
-        <div class="columns is-marginless">
-            <div class="column is-8">
-                <a href="/users">Voir tous les utilisateurs</a>
             </div>
         </div>
     </div>

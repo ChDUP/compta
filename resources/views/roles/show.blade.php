@@ -6,7 +6,6 @@ rôle : {{ $role->name }}
 
 @section('content')
 <div class="columns">
-    @include('layouts.left_column')
     <div class="column is-10">
         <div class="content is-medium">
                 @if ($role->users->count())
@@ -18,9 +17,6 @@ rôle : {{ $role->name }}
                 @else
                 <p>Il n'y a aucun utilisateur avec le rôle {{ $role->name }}.</p>
                 @endif
-                <p>
-                    <a href="/roles">Voir tous les rôles</a>
-                </p>
         </div>
     </div>
 </div>
