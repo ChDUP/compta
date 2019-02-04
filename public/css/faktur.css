@@ -80,3 +80,13 @@ html, body {
     max-height: 250px;
     overflow-y: scroll;
   }
+
+  .login-content {
+    margin-top: 10rem;
+  }
+
+  @media screen and (min-width: 769px), print {
+    .login-content .field-label {
+      flex-grow: 2;
+    }
+  }

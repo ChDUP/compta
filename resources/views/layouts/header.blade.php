@@ -5,7 +5,7 @@
                 @yield('title')
             </h1>
             <h2 class="subtitle">
-                Bienvenue !
+                @yield('subtitle')
             </h2>
         </div>
     </div>

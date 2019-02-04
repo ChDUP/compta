@@ -35,4 +35,18 @@ class User extends Authenticatable
     public function invoices() {
         return $this->hasMany(Invoice::class);
     }
+
+    public function company() {
+        return $this->belongsTo(Company::class);
+    }
+    /**
+     * Retourne les X dernières factures de l'utilisateur
+     */
+    public function getLastInvoices($nb) {
+        return($this->invoices->reverse()->take((int)$nb));
+    }
+
+    public function isAdmin() {
+        return $this->role_id === 1;
+    }
 }

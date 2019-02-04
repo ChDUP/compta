@@ -17,18 +17,24 @@
 </head>
 
 <body>
+    @if (Auth::check())
     @include('layouts.navigation')
+    @endif
     <div class="container">
+        @if (Auth::check())
         <div class="columns">
                 @include('layouts.left-column')
             <div class="column is-9">
                 @include('layouts.header')
                 @include('layouts.tiles')
-                <div class="columns">
+            @endif
+                <div class="content">
                     @yield('content')
                 </div>
+            @if (Auth::check())
             </div>
         </div>
+        @endif
     </div>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

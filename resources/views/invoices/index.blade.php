@@ -10,7 +10,7 @@ les factures
                 <div class="content is-medium">
                         <ul>
                                 @foreach ($invoices as $invoice)
-                                        <li><a href="/invoices/{{ $invoice->id }}">{{ ucfirst($invoice->name) }}</a></li>
+                                        <li><a href="/invoices/{{ $invoice->id }}">{{ ucfirst($invoice->title) }}</a></li>
                                 @endforeach
                         </ul>
                 </div>

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-facture : {{ $invoice->name }}
+facture : {{ $invoice->title }}
 @endsection
 
 @section('content')
     <div class="columns">
         <div class="column is-10">
             <div class="columns is-marginless">
-                <div class="column is-5">
+                <div class="column is-7">
                         <div class="card">
                             <header class="card-header">
                                     <p class="card-header-title">Détail</p>
@@ -17,7 +17,9 @@ facture : {{ $invoice->name }}
                                 <ul>
                                     <li>Mois : {{ $invoice->month }}</li>
                                     <li>Année : {{ $invoice->year }}</li>
-                                    <li>Concerne : <a href="/users/{{ $invoice->user_id }}">{{ ucfirst($invoice->user->firstname) }}</a></li>
+                                    <li>Montant : {{ $invoice->amount }} €</li>
+                                    <li>Concerne : {{ $invoice->company->name }}</li>
+                                    <li>Ajoutée par : <a href="/users/{{ $invoice->user_id }}">{{ ucfirst($invoice->user->firstname) }}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -25,7 +27,7 @@ facture : {{ $invoice->name }}
             </div>
             <div class="columns is-marginless">
                 <div class="column is-8">
-                    <a href="/invoices">Voir toutes les factures</a>
+                    <a href="/invoices/{{ $invoice->id }}/download">Télécharger la facture</a>
                 </div>
             </div>
         </div>

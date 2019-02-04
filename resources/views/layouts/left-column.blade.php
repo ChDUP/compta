@@ -1,27 +1,37 @@
 <div class="column is-3 ">
     <aside class="menu is-hidden-mobile">
         <p class="menu-label">
-            General
-        </p>
-        <ul class="menu-list">
-            <li><a class="is-active" href="/users">Utilisateurs</a></li>
-            <li><a href="/roles">Rôles</a></li>
-            <li><a href="/invoices">Factures</a></li>
-        </ul>
-        <p class="menu-label">
-            Utilisateurs
+            Mon compte
         </p>
         <ul class="menu-list">
             <li>
-                <a href="/users">Tous les utilisateurs</a>
-                <ul>
-                    <li><a href="/users/1">Laurent</a></li>
-                    <li><a href="/users/2">Gaelle</a></li>
-                    <li><a href="/users/3">Sophie</a></li>
-                    <li><a>Ajouter un utilisateur</a></li>
-                </ul>
+               <a href="/users/modify/{{ Auth::user()->id }}">Voir mon compte</a>
+               <a href="#">Me déconnecter</a>
             </li>
         </ul>
+        <p class="menu-label">
+            Mes factures
+        </p>
+        <ul class="menu-list">
+            <li>
+                <a href="/invoices">Toutes les factures</a>
+                <ul>
+                    <li><a href="/users/1">2018</a></li>
+                    <li><a href="/users/2">2019</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/invoices/create">Ajouter une facture</a>
+        </ul>
+        @if (Auth::user()->isAdmin())
+        <p class="menu-label">
+                Utilisateurs
+            </p>
+            <ul class="menu-list">
+                <li><a class="is-active" href="/users">Utilisateurs</a></li>
+                <li><a href="/roles">Rôles</a></li>
+                <li><a href="/invoices">Factures</a></li>
+            </ul>
         <p class="menu-label">
                 Rôles
             </p>
@@ -36,12 +46,13 @@
                 </li>
             </ul>
         <p class="menu-label">
-                Exemples
-            </p>
-            <ul class="menu-list">
-                <li>
-                    <a href="/models">Voir les exemples</a>
-                </li>
-            </ul>
+            Exemples
+        </p>
+        <ul class="menu-list">
+            <li>
+                <a href="/models">Voir les exemples</a>
+            </li>
+        </ul>
+        @endif
     </aside>
 </div>
