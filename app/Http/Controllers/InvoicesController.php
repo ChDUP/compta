@@ -22,7 +22,14 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        $invoices = Invoice::all();
+        $invoices = Invoice::all()->sortByDesc('date')->groupby([
+            function ($invoice) {
+                return $invoice->date->formatLocalized('%Y');
+            },
+            function ($invoice) {
+                return $invoice->date->formatLocalized('%B');
+            }
+        ]);
         return view('invoices.index', ['invoices' => $invoices]);
     }
 

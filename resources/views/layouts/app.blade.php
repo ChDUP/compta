@@ -26,7 +26,6 @@
                 @include('layouts.left-column')
             <div class="column is-9">
                 @include('layouts.header')
-                @include('layouts.tiles')
             @endif
                 <div class="content">
                     @yield('content')

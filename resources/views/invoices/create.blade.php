@@ -11,7 +11,7 @@ Enregistrement d'une nouvelle facture
 @section('content')
             <div class="card">
                 <header class="card-header">
-                    <p class="card-header-title">Nouvelle Facture</p>
+                <p class="card-header-title">@lang('invoice.new')</p>
                 </header>
 
                 <div class="card-content">

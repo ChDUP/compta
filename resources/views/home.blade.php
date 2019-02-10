@@ -9,6 +9,7 @@ Bienvenue !
 @endsection
 
 @section('content')
+@include('layouts.tiles')
 <div class="columns is-marginless">
     <!--
         <div class="column is-5">
@@ -46,7 +47,7 @@ Bienvenue !
 -->
     @if ($user->latests_invoices->count())
     <div class="column is-6">
-        <div class="card events-card">
+        <div class="card events-card latests-invoices">
             <header class="card-header">
                 <p class="card-header-title">
                     Dernières factures

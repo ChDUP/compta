@@ -5,15 +5,27 @@ les factures
 @endsection
 
 @section('content')
-<div class="columns">
-        <div class="column is-10">
-                <div class="content is-medium">
-                        <ul>
-                                @foreach ($invoices as $invoice)
-                                        <li><a href="/invoices/{{ $invoice->id }}">{{ ucfirst($invoice->title) }}</a></li>
+
+@foreach ($invoices as $year => $invoices)
+         <h2 class="invoices_year" id="invoices-{{ $year }}">{{ $year }}</h2>
+        @foreach ($invoices as $month => $invoices)
+
+                <h3 class="invoices_month">{{ $month }}</h3>
+                <section class="invoices-tiles">
+                        @foreach($invoices->chunk(5) as $chunk)
+                        <div class="tile is-ancestor has-text-centered">
+                                @foreach($chunk as $invoice)
+                                        <div class="tile is-parent">
+                                                <a class="tile is-child box" href="/invoices/{{ $invoice->id }}">
+                                                        <p class="invoice_title title">{{ ucfirst($invoice->title) }}</p>
+                                                        <p class="subtitle">{{ $invoice->amount }}€</p>
+                                                </a>
+                                        </div>
                                 @endforeach
-                        </ul>
-                </div>
-        </div>
-</div>
+                        </div>
+                        @endforeach
+                </section>
+         @endforeach
+@endforeach
+
 @endsection
