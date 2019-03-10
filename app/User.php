@@ -39,6 +39,23 @@ class User extends Authenticatable
     public function company() {
         return $this->belongsTo(Company::class);
     }
+
+    /**
+     * Retourne les ID companies parentes de l'utilisateur
+     */
+    public function companies() {
+        $companies = array();
+        $company = $this->company;
+
+        while(true) {
+            $companies[] = $company->id;
+            if(is_null($company->parent))
+                break;
+            $company = Company::find($company->parent);
+        }
+        return $companies;
+    }
+
     /**
      * Retourne les X dernières factures de l'utilisateur
      */

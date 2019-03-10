@@ -9,4 +9,8 @@ class Company extends Model
     public function users() {
         return $this->hasMany(User::class);
     }
+
+    public function invoices() {
+        return $this->hasMany(Invoice::class);
+    }
 }

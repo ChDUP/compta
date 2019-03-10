@@ -27,7 +27,7 @@
             <div class="column is-9">
                 @include('layouts.header')
             @endif
-                <div class="content">
+                <div id="app" class="content">
                     @yield('content')
                 </div>
             @if (Auth::check())

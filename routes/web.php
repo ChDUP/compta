@@ -17,6 +17,7 @@ Route::get('/models', function () {
 Route::resource('roles', 'RolesController');
 Route::resource('users', 'UsersController');
 Route::resource('invoices', 'InvoicesController');
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');

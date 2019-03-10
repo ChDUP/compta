@@ -25,7 +25,7 @@ Enregistrement d'une nouvelle facture
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input" data-start-date="2018-03-03" data-date-format="YYYY-MM-DD" data-show-footer="false" id="date" type="date" name="date" data-close-on-select="false" data-today-button="false" data-display-mode="inline" data-lang="fr" value="{{ old('date') }}" required autofocus>
+                                                <input data-start-date="2018-12-03" data-date-format="YYYY-MM-DD" data-show-footer="false" id="date" type="date" name="date" data-close-on-select="false" data-today-button="false" data-display-mode="inline" data-lang="fr" value="{{ old('date') }}" required autofocus>
                                             </p>
 
                                             @if ($errors->has('date'))

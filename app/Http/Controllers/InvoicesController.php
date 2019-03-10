@@ -22,7 +22,16 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        $invoices = Invoice::all()->sortByDesc('date')->groupby([
+        // $invoices = Invoice::all()->sortByDesc('date')->groupby([
+
+        // $invoices = Invoice::where('user_id', auth()->id())->get()->sortByDesc('date')->groupby([
+
+        // $invoices = App\Invoice::all()->contains('company_id', 2));
+
+        $companies = auth()->user()->companies();
+
+        // $invoices = auth()->user()->company->invoices->sortByDesc('date')->groupby([
+        $invoices = Invoice::wherein('company_id', $companies)->get()->sortByDesc('date')->groupby([
             function ($invoice) {
                 return $invoice->date->formatLocalized('%Y');
             },
