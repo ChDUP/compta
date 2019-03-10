@@ -20,8 +20,11 @@ class InvoicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request = null)
     {
+        if(isset($request->search)) {
+            dd('Recherche');
+        }
         // $invoices = Invoice::all()->sortByDesc('date')->groupby([
 
         // $invoices = Invoice::where('user_id', auth()->id())->get()->sortByDesc('date')->groupby([

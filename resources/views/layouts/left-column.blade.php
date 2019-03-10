@@ -9,7 +9,7 @@
         <ul class="menu-list">
             <li>
                <a href="/users/modify/{{ Auth::user()->id }}">Voir mon compte</a>
-               <a href="#">Me déconnecter</a>
+               <a href="/logout">Me déconnecter</a>
             </li>
         </ul>
         <p class="menu-label">

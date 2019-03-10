@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -61,6 +62,14 @@ class User extends Authenticatable
      */
     public function getLastInvoices($nb) {
         return($this->invoices->reverse()->take((int)$nb));
+    }
+
+    /**
+    * Retourne le montant total des factures du mois
+    */
+    public function getTotalMonthInvoices() {
+        $firstDay = new Carbon('first day of this month');
+        return $this->invoices->where('date', '>', $firstDay)->sum('amount');
     }
 
     public function isAdmin() {

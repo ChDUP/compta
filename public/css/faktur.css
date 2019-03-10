@@ -114,6 +114,7 @@ h2.invoices_year {
 
 .invoices-tiles .tile {
   flex-grow: inherit;
+  flex-basis: inherit;
 }
 
 .invoice_title {

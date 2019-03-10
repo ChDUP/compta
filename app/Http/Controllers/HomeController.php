@@ -25,7 +25,7 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $user['latests_invoices'] = $user->getLastInvoices(10);
-
+        $user['total_month_invoices'] = $user->getTotalMonthInvoices();
         return view('home', compact('user'));
     }
 }

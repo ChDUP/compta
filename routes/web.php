@@ -24,3 +24,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/invoices/{invoice}/download', 'InvoicesController@download');
+Route::post('/invoices', 'InvoicesController@index');
+
+Route::get('/logout', 'Auth\LoginController@logout');

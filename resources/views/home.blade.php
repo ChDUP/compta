@@ -92,15 +92,26 @@ Bienvenue !
             </header>
             <div class="card-content">
                 <div class="content">
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input is-large" type="text" placeholder="">
-                        <span class="icon is-medium is-left">
-                            <i class="fa fa-search"></i>
-                        </span>
-                        <span class="icon is-medium is-right">
-                            <i class="fa fa-check"></i>
-                        </span>
-                    </div>
+                    <form method="POST" action="/invoices">
+                        {{ csrf_field() }}
+                        <div class="field control has-icons-left has-icons-right">
+                            <input class="input is-large" type="text" placeholder="">
+                            <span class="icon is-medium is-left">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <span class="icon is-medium is-right">
+                                <i class="fa fa-check"></i>
+                            </span>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button name="search" class="button is-link">Rechercher</button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-text">Vider</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
