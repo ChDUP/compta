@@ -92,20 +92,17 @@ Bienvenue !
             </header>
             <div class="card-content">
                 <div class="content">
-                    <form method="POST" action="/invoices">
+                    <form method="post" action="/invoices/search">
                         {{ csrf_field() }}
-                        <div class="field control has-icons-left has-icons-right">
-                            <input class="input is-large" type="text" placeholder="">
+                        <div class="field control has-icons-left">
+                            <input class="input is-large" type="text" name="search_term" placeholder="votre recherche" required autofocus>
                             <span class="icon is-medium is-left">
                                 <i class="fa fa-search"></i>
-                            </span>
-                            <span class="icon is-medium is-right">
-                                <i class="fa fa-check"></i>
                             </span>
                         </div>
                         <div class="field is-grouped">
                             <div class="control">
-                                <button name="search" class="button is-link">Rechercher</button>
+                                <button name="search" value=1 class="button is-success">Rechercher</button>
                             </div>
                             <div class="control">
                                 <button class="button is-text">Vider</button>

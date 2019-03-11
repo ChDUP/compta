@@ -14,6 +14,7 @@ Route::get('/models', function () {
     return view('models');
 });
 
+
 Route::resource('roles', 'RolesController');
 Route::resource('users', 'UsersController');
 Route::resource('invoices', 'InvoicesController');
@@ -24,6 +25,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/invoices/{invoice}/download', 'InvoicesController@download');
-Route::post('/invoices', 'InvoicesController@index');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
+// Route::post('/invoices',
+//     function() {
+//         echo('TEST function');
+//     }
+// );
+Route::post('/invoices/search', 'InvoicesController@search');

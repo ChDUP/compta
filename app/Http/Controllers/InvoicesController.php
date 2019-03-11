@@ -20,11 +20,14 @@ class InvoicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request = null)
+    public function index($request = null)
     {
-        if(isset($request->search)) {
-            dd('Recherche');
+
+        $search = '';
+        if(!is_null($request)) {
+            $search = $request->search_term;
         }
+
         // $invoices = Invoice::all()->sortByDesc('date')->groupby([
 
         // $invoices = Invoice::where('user_id', auth()->id())->get()->sortByDesc('date')->groupby([
@@ -34,7 +37,7 @@ class InvoicesController extends Controller
         $companies = auth()->user()->companies();
 
         // $invoices = auth()->user()->company->invoices->sortByDesc('date')->groupby([
-        $invoices = Invoice::wherein('company_id', $companies)->get()->sortByDesc('date')->groupby([
+        $invoices = Invoice::wherein('company_id', $companies)->where('title','like', '%' . $search . '%')->get()->sortByDesc('date')->groupby([
             function ($invoice) {
                 return $invoice->date->formatLocalized('%Y');
             },
@@ -140,5 +143,10 @@ class InvoicesController extends Controller
         abort_unless(auth()->user()->id == $invoice->user_id, 403);
 
         return (Storage::download($invoice->hash, $invoice->original_name));
+    }
+
+    public function search(Request $request)
+    {
+        return $this->index($request);
     }
 }
