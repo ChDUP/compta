@@ -120,3 +120,15 @@ h2.invoices_year {
 .invoice_title {
   font-size: 1rem;
 }
+
+#invoice_dl {
+  height: 145px;
+  width: 145px;
+  display: block;
+  background-image: url('/img/file-download.png');
+  background-repeat: no-repeat;
+}
+
+#invoice_dl:hover {
+  background-image: url('/img/file-download-hover.png');
+}

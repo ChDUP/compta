@@ -6,28 +6,34 @@ facture : {{ $invoice->title }}
 
 @section('content')
     <div class="columns">
-        <div class="column is-10">
+        <div class="column is-12">
             <div class="columns is-marginless">
-                <div class="column is-7">
-                        <div class="card">
-                            <header class="card-header">
-                                    <p class="card-header-title">Détail</p>
-                            </header>
-                            <div class="card-content">
-                                <ul>
-                                    <li>Mois : {{ $invoice->month }}</li>
-                                    <li>Année : {{ $invoice->year }}</li>
-                                    <li>Montant : {{ $invoice->amount }} €</li>
-                                    <li>Concerne : {{ $invoice->company->name }}</li>
-                                    <li>Ajoutée par : <a href="/users/{{ $invoice->user_id }}">{{ ucfirst($invoice->user->firstname) }}</a></li>
-                                </ul>
-                            </div>
+                <div class="column is-6">
+                    <div class="card">
+                        <header class="card-header">
+                                <p class="card-header-title"><b>Détail</b></p>
+                        </header>
+                        <div class="card-content">
+                            <ul>
+                                <li>Mois : {{ $invoice->month }}</li>
+                                <li>Année : {{ $invoice->year }}</li>
+                                <li>Montant : {{ $invoice->amount }} €</li>
+                                <li>Concerne : {{ $invoice->company->name }}</li>
+                                <li>Ajoutée par : <a href="/users/{{ $invoice->user_id }}">{{ ucfirst($invoice->user->firstname) }}</a></li>
+                            </ul>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <div class="columns is-marginless">
-                <div class="column is-8">
-                    <a href="/invoices/{{ $invoice->id }}/download">Télécharger la facture</a>
+                <div class="column is-6">
+                    <div class="card">
+                        <header class="card-header">
+                                <p class="card-header-title"><b>Téléchargement</b></p>
+                        </header>
+                        <div class="card-content">
+                            <a id="invoice_dl" href="/invoices/{{ $invoice->id }}/download" title="facture">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

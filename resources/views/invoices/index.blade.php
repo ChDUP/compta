@@ -6,6 +6,11 @@ les factures
 
 @section('content')
 
+@if ($search !='')
+        <br/>
+        <h2>Recherche : {{ $search }}</h2>
+@endif
+
 @foreach ($invoices as $year => $invoices)
          <h2 class="invoices_year" id="invoices-{{ $year }}">{{ $year }}</h2>
         @foreach ($invoices as $month => $invoices)

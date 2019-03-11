@@ -45,7 +45,7 @@ class InvoicesController extends Controller
                 return $invoice->date->formatLocalized('%B');
             }
         ]);
-        return view('invoices.index', ['invoices' => $invoices]);
+        return view('invoices.index', ['invoices' => $invoices, 'search' => $search]);
     }
 
     /**

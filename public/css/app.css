@@ -80,8 +80,7 @@
 .progress:not(:last-child),
 .notification:not(:last-child),
 .content:not(:last-child),
-.box:not(:last-child),
-.content p.invoice_title:not(:last-child) {
+.box:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
@@ -200,21 +199,37 @@
 .modal-background,
 .modal,
 .image.is-square img,
+.image.is-square .has-ratio,
 .image.is-1by1 img,
+.image.is-1by1 .has-ratio,
 .image.is-5by4 img,
+.image.is-5by4 .has-ratio,
 .image.is-4by3 img,
+.image.is-4by3 .has-ratio,
 .image.is-3by2 img,
+.image.is-3by2 .has-ratio,
 .image.is-5by3 img,
+.image.is-5by3 .has-ratio,
 .image.is-16by9 img,
+.image.is-16by9 .has-ratio,
 .image.is-2by1 img,
+.image.is-2by1 .has-ratio,
 .image.is-3by1 img,
+.image.is-3by1 .has-ratio,
 .image.is-4by5 img,
+.image.is-4by5 .has-ratio,
 .image.is-3by4 img,
+.image.is-3by4 .has-ratio,
 .image.is-2by3 img,
+.image.is-2by3 .has-ratio,
 .image.is-3by5 img,
+.image.is-3by5 .has-ratio,
 .image.is-9by16 img,
+.image.is-9by16 .has-ratio,
 .image.is-1by2 img,
+.image.is-1by2 .has-ratio,
 .image.is-1by3 img,
+.image.is-1by3 .has-ratio,
 .is-overlay {
   bottom: 0;
   left: 0;
@@ -304,11 +319,22 @@
 .select select[disabled],
 [disabled].input,
 [disabled].textarea,
-[disabled].button {
+[disabled].button,
+fieldset[disabled] .pagination-previous,
+fieldset[disabled] .pagination-next,
+fieldset[disabled] .pagination-link,
+fieldset[disabled] .pagination-ellipsis,
+fieldset[disabled] .file-cta,
+fieldset[disabled] .file-name,
+fieldset[disabled] .select select,
+.select fieldset[disabled] select,
+fieldset[disabled] .input,
+fieldset[disabled] .textarea,
+fieldset[disabled] .button {
   cursor: not-allowed;
 }
 
-/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+/*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */
 
 html,
 body,
@@ -369,9 +395,15 @@ html {
 }
 
 img,
-audio,
+embed,
+iframe,
+object,
 video {
   height: auto;
+  max-width: 100%;
+}
+
+audio {
   max-width: 100%;
 }
 
@@ -438,6 +470,7 @@ body {
 }
 
 a {
+  color: #3273dc;
   cursor: pointer;
   text-decoration: none;
 }
@@ -488,6 +521,10 @@ span {
 strong {
   color: #363636;
   font-weight: 700;
+}
+
+fieldset {
+  border: none;
 }
 
 pre {
@@ -1045,7 +1082,7 @@ a.has-text-dark:focus {
 }
 
 .has-text-primary {
-  color: #676765 !important;
+  color: #00d1b2 !important;
 }
 
 a.has-text-primary:hover,
@@ -1054,11 +1091,11 @@ a.has-text-primary:focus {
 }
 
 .has-background-primary {
-  background-color: #676765 !important;
+  background-color: #00d1b2 !important;
 }
 
 .has-text-link {
-  color: #64c2f0 !important;
+  color: #3273dc !important;
 }
 
 a.has-text-link:hover,
@@ -1067,7 +1104,7 @@ a.has-text-link:focus {
 }
 
 .has-background-link {
-  background-color: #64c2f0 !important;
+  background-color: #3273dc !important;
 }
 
 .has-text-info {
@@ -1208,6 +1245,26 @@ a.has-text-danger:focus {
 
 .has-text-weight-bold {
   font-weight: 700 !important;
+}
+
+.is-family-primary {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.is-family-secondary {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.is-family-sans-serif {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.is-family-monospace {
+  font-family: monospace !important;
+}
+
+.is-family-code {
+  font-family: monospace !important;
 }
 
 .is-block {
@@ -1654,11 +1711,11 @@ a.has-text-danger:focus {
 
 a.box:hover,
 a.box:focus {
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px #64c2f0;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
 }
 
 a.box:active {
-  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #64c2f0;
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
 }
 
 .button {
@@ -1711,7 +1768,7 @@ a.box:active {
 
 .button:focus,
 .button.is-focused {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   color: #363636;
 }
 
@@ -1747,7 +1804,8 @@ a.box:active {
   color: #363636;
 }
 
-.button.is-text[disabled] {
+.button.is-text[disabled],
+fieldset[disabled] .button.is-text {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -1784,7 +1842,8 @@ a.box:active {
   color: #0a0a0a;
 }
 
-.button.is-white[disabled] {
+.button.is-white[disabled],
+fieldset[disabled] .button.is-white {
   background-color: white;
   border-color: transparent;
   box-shadow: none;
@@ -1799,7 +1858,8 @@ a.box:active {
   background-color: black;
 }
 
-.button.is-white.is-inverted[disabled] {
+.button.is-white.is-inverted[disabled],
+fieldset[disabled] .button.is-white.is-inverted {
   background-color: #0a0a0a;
   border-color: transparent;
   box-shadow: none;
@@ -1827,7 +1887,8 @@ a.box:active {
   border-color: transparent transparent white white !important;
 }
 
-.button.is-white.is-outlined[disabled] {
+.button.is-white.is-outlined[disabled],
+fieldset[disabled] .button.is-white.is-outlined {
   background-color: transparent;
   border-color: white;
   box-shadow: none;
@@ -1846,7 +1907,8 @@ a.box:active {
   color: white;
 }
 
-.button.is-white.is-inverted.is-outlined[disabled] {
+.button.is-white.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-white.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #0a0a0a;
   box-shadow: none;
@@ -1884,7 +1946,8 @@ a.box:active {
   color: white;
 }
 
-.button.is-black[disabled] {
+.button.is-black[disabled],
+fieldset[disabled] .button.is-black {
   background-color: #0a0a0a;
   border-color: transparent;
   box-shadow: none;
@@ -1899,7 +1962,8 @@ a.box:active {
   background-color: #f2f2f2;
 }
 
-.button.is-black.is-inverted[disabled] {
+.button.is-black.is-inverted[disabled],
+fieldset[disabled] .button.is-black.is-inverted {
   background-color: white;
   border-color: transparent;
   box-shadow: none;
@@ -1927,7 +1991,8 @@ a.box:active {
   border-color: transparent transparent #0a0a0a #0a0a0a !important;
 }
 
-.button.is-black.is-outlined[disabled] {
+.button.is-black.is-outlined[disabled],
+fieldset[disabled] .button.is-black.is-outlined {
   background-color: transparent;
   border-color: #0a0a0a;
   box-shadow: none;
@@ -1946,7 +2011,8 @@ a.box:active {
   color: #0a0a0a;
 }
 
-.button.is-black.is-inverted.is-outlined[disabled] {
+.button.is-black.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-black.is-inverted.is-outlined {
   background-color: transparent;
   border-color: white;
   box-shadow: none;
@@ -1984,7 +2050,8 @@ a.box:active {
   color: #363636;
 }
 
-.button.is-light[disabled] {
+.button.is-light[disabled],
+fieldset[disabled] .button.is-light {
   background-color: whitesmoke;
   border-color: transparent;
   box-shadow: none;
@@ -1999,7 +2066,8 @@ a.box:active {
   background-color: #292929;
 }
 
-.button.is-light.is-inverted[disabled] {
+.button.is-light.is-inverted[disabled],
+fieldset[disabled] .button.is-light.is-inverted {
   background-color: #363636;
   border-color: transparent;
   box-shadow: none;
@@ -2027,7 +2095,8 @@ a.box:active {
   border-color: transparent transparent whitesmoke whitesmoke !important;
 }
 
-.button.is-light.is-outlined[disabled] {
+.button.is-light.is-outlined[disabled],
+fieldset[disabled] .button.is-light.is-outlined {
   background-color: transparent;
   border-color: whitesmoke;
   box-shadow: none;
@@ -2046,7 +2115,8 @@ a.box:active {
   color: whitesmoke;
 }
 
-.button.is-light.is-inverted.is-outlined[disabled] {
+.button.is-light.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-light.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #363636;
   box-shadow: none;
@@ -2084,7 +2154,8 @@ a.box:active {
   color: whitesmoke;
 }
 
-.button.is-dark[disabled] {
+.button.is-dark[disabled],
+fieldset[disabled] .button.is-dark {
   background-color: #363636;
   border-color: transparent;
   box-shadow: none;
@@ -2099,7 +2170,8 @@ a.box:active {
   background-color: #e8e8e8;
 }
 
-.button.is-dark.is-inverted[disabled] {
+.button.is-dark.is-inverted[disabled],
+fieldset[disabled] .button.is-dark.is-inverted {
   background-color: whitesmoke;
   border-color: transparent;
   box-shadow: none;
@@ -2127,7 +2199,8 @@ a.box:active {
   border-color: transparent transparent #363636 #363636 !important;
 }
 
-.button.is-dark.is-outlined[disabled] {
+.button.is-dark.is-outlined[disabled],
+fieldset[disabled] .button.is-dark.is-outlined {
   background-color: transparent;
   border-color: #363636;
   box-shadow: none;
@@ -2146,7 +2219,8 @@ a.box:active {
   color: #363636;
 }
 
-.button.is-dark.is-inverted.is-outlined[disabled] {
+.button.is-dark.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-dark.is-inverted.is-outlined {
   background-color: transparent;
   border-color: whitesmoke;
   box-shadow: none;
@@ -2154,14 +2228,14 @@ a.box:active {
 }
 
 .button.is-primary {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
   color: #fff;
 }
 
 .button.is-primary:hover,
 .button.is-primary.is-hovered {
-  background-color: #64c2f0;
+  background-color: #00c4a7;
   border-color: transparent;
   color: #fff;
 }
@@ -2184,26 +2258,28 @@ a.box:active {
   color: #fff;
 }
 
-.button.is-primary[disabled] {
-  background-color: #676765;
+.button.is-primary[disabled],
+fieldset[disabled] .button.is-primary {
+  background-color: #00d1b2;
   border-color: transparent;
   box-shadow: none;
 }
 
 .button.is-primary.is-inverted {
   background-color: #fff;
-  color: #676765;
+  color: #00d1b2;
 }
 
 .button.is-primary.is-inverted:hover {
   background-color: #f2f2f2;
 }
 
-.button.is-primary.is-inverted[disabled] {
+.button.is-primary.is-inverted[disabled],
+fieldset[disabled] .button.is-primary.is-inverted {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
-  color: #676765;
+  color: #00d1b2;
 }
 
 .button.is-primary.is-loading::after {
@@ -2212,26 +2288,27 @@ a.box:active {
 
 .button.is-primary.is-outlined {
   background-color: transparent;
-  border-color: #676765;
-  color: #676765;
+  border-color: #00d1b2;
+  color: #00d1b2;
 }
 
 .button.is-primary.is-outlined:hover,
 .button.is-primary.is-outlined:focus {
-  background-color: #676765;
-  border-color: #676765;
+  background-color: #00d1b2;
+  border-color: #00d1b2;
   color: #fff;
 }
 
 .button.is-primary.is-outlined.is-loading::after {
-  border-color: transparent transparent #676765 #676765 !important;
+  border-color: transparent transparent #00d1b2 #00d1b2 !important;
 }
 
-.button.is-primary.is-outlined[disabled] {
+.button.is-primary.is-outlined[disabled],
+fieldset[disabled] .button.is-primary.is-outlined {
   background-color: transparent;
-  border-color: #676765;
+  border-color: #00d1b2;
   box-shadow: none;
-  color: #676765;
+  color: #00d1b2;
 }
 
 .button.is-primary.is-inverted.is-outlined {
@@ -2243,10 +2320,11 @@ a.box:active {
 .button.is-primary.is-inverted.is-outlined:hover,
 .button.is-primary.is-inverted.is-outlined:focus {
   background-color: #fff;
-  color: #676765;
+  color: #00d1b2;
 }
 
-.button.is-primary.is-inverted.is-outlined[disabled] {
+.button.is-primary.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-primary.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -2254,7 +2332,7 @@ a.box:active {
 }
 
 .button.is-link {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   border-color: transparent;
   color: #fff;
 }
@@ -2284,26 +2362,28 @@ a.box:active {
   color: #fff;
 }
 
-.button.is-link[disabled] {
-  background-color: #64c2f0;
+.button.is-link[disabled],
+fieldset[disabled] .button.is-link {
+  background-color: #3273dc;
   border-color: transparent;
   box-shadow: none;
 }
 
 .button.is-link.is-inverted {
   background-color: #fff;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .button.is-link.is-inverted:hover {
   background-color: #f2f2f2;
 }
 
-.button.is-link.is-inverted[disabled] {
+.button.is-link.is-inverted[disabled],
+fieldset[disabled] .button.is-link.is-inverted {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .button.is-link.is-loading::after {
@@ -2312,26 +2392,27 @@ a.box:active {
 
 .button.is-link.is-outlined {
   background-color: transparent;
-  border-color: #64c2f0;
-  color: #64c2f0;
+  border-color: #3273dc;
+  color: #3273dc;
 }
 
 .button.is-link.is-outlined:hover,
 .button.is-link.is-outlined:focus {
-  background-color: #64c2f0;
-  border-color: #64c2f0;
+  background-color: #3273dc;
+  border-color: #3273dc;
   color: #fff;
 }
 
 .button.is-link.is-outlined.is-loading::after {
-  border-color: transparent transparent #64c2f0 #64c2f0 !important;
+  border-color: transparent transparent #3273dc #3273dc !important;
 }
 
-.button.is-link.is-outlined[disabled] {
+.button.is-link.is-outlined[disabled],
+fieldset[disabled] .button.is-link.is-outlined {
   background-color: transparent;
-  border-color: #64c2f0;
+  border-color: #3273dc;
   box-shadow: none;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .button.is-link.is-inverted.is-outlined {
@@ -2343,10 +2424,11 @@ a.box:active {
 .button.is-link.is-inverted.is-outlined:hover,
 .button.is-link.is-inverted.is-outlined:focus {
   background-color: #fff;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
-.button.is-link.is-inverted.is-outlined[disabled] {
+.button.is-link.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-link.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -2384,7 +2466,8 @@ a.box:active {
   color: #fff;
 }
 
-.button.is-info[disabled] {
+.button.is-info[disabled],
+fieldset[disabled] .button.is-info {
   background-color: #209cee;
   border-color: transparent;
   box-shadow: none;
@@ -2399,7 +2482,8 @@ a.box:active {
   background-color: #f2f2f2;
 }
 
-.button.is-info.is-inverted[disabled] {
+.button.is-info.is-inverted[disabled],
+fieldset[disabled] .button.is-info.is-inverted {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
@@ -2427,7 +2511,8 @@ a.box:active {
   border-color: transparent transparent #209cee #209cee !important;
 }
 
-.button.is-info.is-outlined[disabled] {
+.button.is-info.is-outlined[disabled],
+fieldset[disabled] .button.is-info.is-outlined {
   background-color: transparent;
   border-color: #209cee;
   box-shadow: none;
@@ -2446,7 +2531,8 @@ a.box:active {
   color: #209cee;
 }
 
-.button.is-info.is-inverted.is-outlined[disabled] {
+.button.is-info.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-info.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -2484,7 +2570,8 @@ a.box:active {
   color: #fff;
 }
 
-.button.is-success[disabled] {
+.button.is-success[disabled],
+fieldset[disabled] .button.is-success {
   background-color: #23d160;
   border-color: transparent;
   box-shadow: none;
@@ -2499,7 +2586,8 @@ a.box:active {
   background-color: #f2f2f2;
 }
 
-.button.is-success.is-inverted[disabled] {
+.button.is-success.is-inverted[disabled],
+fieldset[disabled] .button.is-success.is-inverted {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
@@ -2527,7 +2615,8 @@ a.box:active {
   border-color: transparent transparent #23d160 #23d160 !important;
 }
 
-.button.is-success.is-outlined[disabled] {
+.button.is-success.is-outlined[disabled],
+fieldset[disabled] .button.is-success.is-outlined {
   background-color: transparent;
   border-color: #23d160;
   box-shadow: none;
@@ -2546,7 +2635,8 @@ a.box:active {
   color: #23d160;
 }
 
-.button.is-success.is-inverted.is-outlined[disabled] {
+.button.is-success.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-success.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -2584,7 +2674,8 @@ a.box:active {
   color: rgba(0, 0, 0, 0.7);
 }
 
-.button.is-warning[disabled] {
+.button.is-warning[disabled],
+fieldset[disabled] .button.is-warning {
   background-color: #ffdd57;
   border-color: transparent;
   box-shadow: none;
@@ -2599,7 +2690,8 @@ a.box:active {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.button.is-warning.is-inverted[disabled] {
+.button.is-warning.is-inverted[disabled],
+fieldset[disabled] .button.is-warning.is-inverted {
   background-color: rgba(0, 0, 0, 0.7);
   border-color: transparent;
   box-shadow: none;
@@ -2627,7 +2719,8 @@ a.box:active {
   border-color: transparent transparent #ffdd57 #ffdd57 !important;
 }
 
-.button.is-warning.is-outlined[disabled] {
+.button.is-warning.is-outlined[disabled],
+fieldset[disabled] .button.is-warning.is-outlined {
   background-color: transparent;
   border-color: #ffdd57;
   box-shadow: none;
@@ -2646,7 +2739,8 @@ a.box:active {
   color: #ffdd57;
 }
 
-.button.is-warning.is-inverted.is-outlined[disabled] {
+.button.is-warning.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-warning.is-inverted.is-outlined {
   background-color: transparent;
   border-color: rgba(0, 0, 0, 0.7);
   box-shadow: none;
@@ -2684,7 +2778,8 @@ a.box:active {
   color: #fff;
 }
 
-.button.is-danger[disabled] {
+.button.is-danger[disabled],
+fieldset[disabled] .button.is-danger {
   background-color: #ff3860;
   border-color: transparent;
   box-shadow: none;
@@ -2699,7 +2794,8 @@ a.box:active {
   background-color: #f2f2f2;
 }
 
-.button.is-danger.is-inverted[disabled] {
+.button.is-danger.is-inverted[disabled],
+fieldset[disabled] .button.is-danger.is-inverted {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
@@ -2727,7 +2823,8 @@ a.box:active {
   border-color: transparent transparent #ff3860 #ff3860 !important;
 }
 
-.button.is-danger.is-outlined[disabled] {
+.button.is-danger.is-outlined[disabled],
+fieldset[disabled] .button.is-danger.is-outlined {
   background-color: transparent;
   border-color: #ff3860;
   box-shadow: none;
@@ -2746,7 +2843,8 @@ a.box:active {
   color: #ff3860;
 }
 
-.button.is-danger.is-inverted.is-outlined[disabled] {
+.button.is-danger.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-danger.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -2758,6 +2856,10 @@ a.box:active {
   font-size: 0.75rem;
 }
 
+.button.is-normal {
+  font-size: 1rem;
+}
+
 .button.is-medium {
   font-size: 1.25rem;
 }
@@ -2766,7 +2868,8 @@ a.box:active {
   font-size: 1.5rem;
 }
 
-.button[disabled] {
+.button[disabled],
+fieldset[disabled] .button {
   background-color: white;
   border-color: #dbdbdb;
   box-shadow: none;
@@ -2825,6 +2928,19 @@ a.box:active {
 
 .buttons:not(:last-child) {
   margin-bottom: 1rem;
+}
+
+.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+
+.buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
+  font-size: 1.25rem;
+}
+
+.buttons.are-large .button:not(.is-small):not(.is-normal):not(.is-medium) {
+  font-size: 1.5rem;
 }
 
 .buttons.has-addons .button:not(:first-child) {
@@ -3166,12 +3282,14 @@ a.box:active {
 .textarea.is-focused,
 .textarea:active,
 .textarea.is-active {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
 }
 
 .input[disabled],
-.textarea[disabled] {
+fieldset[disabled] .input,
+.textarea[disabled],
+fieldset[disabled] .textarea {
   background-color: whitesmoke;
   border-color: whitesmoke;
   box-shadow: none;
@@ -3179,22 +3297,30 @@ a.box:active {
 }
 
 .input[disabled]::-moz-placeholder,
-.textarea[disabled]::-moz-placeholder {
+fieldset[disabled] .input::-moz-placeholder,
+.textarea[disabled]::-moz-placeholder,
+fieldset[disabled] .textarea::-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
 .input[disabled]::-webkit-input-placeholder,
-.textarea[disabled]::-webkit-input-placeholder {
+fieldset[disabled] .input::-webkit-input-placeholder,
+.textarea[disabled]::-webkit-input-placeholder,
+fieldset[disabled] .textarea::-webkit-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
 .input[disabled]:-moz-placeholder,
-.textarea[disabled]:-moz-placeholder {
+fieldset[disabled] .input:-moz-placeholder,
+.textarea[disabled]:-moz-placeholder,
+fieldset[disabled] .textarea:-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
 .input[disabled]:-ms-input-placeholder,
-.textarea[disabled]:-ms-input-placeholder {
+fieldset[disabled] .input:-ms-input-placeholder,
+.textarea[disabled]:-ms-input-placeholder,
+fieldset[disabled] .textarea:-ms-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
@@ -3269,7 +3395,7 @@ a.box:active {
 
 .input.is-primary,
 .textarea.is-primary {
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .input.is-primary:focus,
@@ -3285,7 +3411,7 @@ a.box:active {
 
 .input.is-link,
 .textarea.is-link {
-  border-color: #64c2f0;
+  border-color: #3273dc;
 }
 
 .input.is-link:focus,
@@ -3445,7 +3571,9 @@ a.box:active {
 }
 
 .checkbox[disabled],
-.radio[disabled] {
+fieldset[disabled] .checkbox,
+.radio[disabled],
+fieldset[disabled] .radio {
   color: #7a7a7a;
   cursor: not-allowed;
 }
@@ -3466,7 +3594,7 @@ a.box:active {
 }
 
 .select:not(.is-multiple):not(.is-loading)::after {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   right: 1.125em;
   z-index: 4;
 }
@@ -3512,30 +3640,35 @@ a.box:active {
 .select select.is-focused,
 .select select:active,
 .select select.is-active {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
 }
 
-.select select[disabled] {
+.select select[disabled],
+fieldset[disabled] .select select {
   background-color: whitesmoke;
   border-color: whitesmoke;
   box-shadow: none;
   color: #7a7a7a;
 }
 
-.select select[disabled]::-moz-placeholder {
+.select select[disabled]::-moz-placeholder,
+fieldset[disabled] .select select::-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
-.select select[disabled]::-webkit-input-placeholder {
+.select select[disabled]::-webkit-input-placeholder,
+fieldset[disabled] .select select::-webkit-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
-.select select[disabled]:-moz-placeholder {
+.select select[disabled]:-moz-placeholder,
+fieldset[disabled] .select select:-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
-.select select[disabled]:-ms-input-placeholder {
+.select select[disabled]:-ms-input-placeholder,
+fieldset[disabled] .select select:-ms-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
@@ -3543,7 +3676,8 @@ a.box:active {
   display: none;
 }
 
-.select select[disabled]:hover {
+.select select[disabled]:hover,
+fieldset[disabled] .select select:hover {
   border-color: whitesmoke;
 }
 
@@ -3645,11 +3779,11 @@ a.box:active {
 }
 
 .select.is-primary:not(:hover)::after {
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .select.is-primary select {
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .select.is-primary select:hover,
@@ -3665,11 +3799,11 @@ a.box:active {
 }
 
 .select.is-link:not(:hover)::after {
-  border-color: #64c2f0;
+  border-color: #3273dc;
 }
 
 .select.is-link select {
-  border-color: #64c2f0;
+  border-color: #3273dc;
 }
 
 .select.is-link select:hover,
@@ -3926,14 +4060,14 @@ a.box:active {
 }
 
 .file.is-primary .file-cta {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
   color: #fff;
 }
 
 .file.is-primary:hover .file-cta,
 .file.is-primary.is-hovered .file-cta {
-  background-color: #64c2f0;
+  background-color: #00c4a7;
   border-color: transparent;
   color: #fff;
 }
@@ -3953,7 +4087,7 @@ a.box:active {
 }
 
 .file.is-link .file-cta {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   border-color: transparent;
   color: #fff;
 }
@@ -4318,11 +4452,11 @@ a.box:active {
 }
 
 .help.is-primary {
-  color: #676765;
+  color: #00d1b2;
 }
 
 .help.is-link {
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .help.is-info {
@@ -4360,16 +4494,16 @@ a.box:active {
   border-radius: 0;
 }
 
-.field.has-addons .control:first-child .button,
-.field.has-addons .control:first-child .input,
-.field.has-addons .control:first-child .select select {
+.field.has-addons .control:first-child:not(:only-child) .button,
+.field.has-addons .control:first-child:not(:only-child) .input,
+.field.has-addons .control:first-child:not(:only-child) .select select {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.field.has-addons .control:last-child .button,
-.field.has-addons .control:last-child .input,
-.field.has-addons .control:last-child .select select {
+.field.has-addons .control:last-child:not(:only-child) .button,
+.field.has-addons .control:last-child:not(:only-child) .input,
+.field.has-addons .control:last-child:not(:only-child) .select select {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4549,52 +4683,11 @@ a.box:active {
 }
 
 .control {
+  box-sizing: border-box;
   clear: both;
   font-size: 1rem;
   position: relative;
   text-align: left;
-}
-
-.control.has-icon .icon {
-  color: #dbdbdb;
-  height: 2.25em;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  width: 2.25em;
-  z-index: 4;
-}
-
-.control.has-icon .input:focus + .icon {
-  color: #7a7a7a;
-}
-
-.control.has-icon .input.is-small + .icon {
-  font-size: 0.75rem;
-}
-
-.control.has-icon .input.is-medium + .icon {
-  font-size: 1.25rem;
-}
-
-.control.has-icon .input.is-large + .icon {
-  font-size: 1.5rem;
-}
-
-.control.has-icon:not(.has-icon-right) .icon {
-  left: 0;
-}
-
-.control.has-icon:not(.has-icon-right) .input {
-  padding-left: 2.25em;
-}
-
-.control.has-icon.has-icon-right .icon {
-  right: 0;
-}
-
-.control.has-icon.has-icon-right .input {
-  padding-right: 2.25em;
 }
 
 .control.has-icons-left .input:focus ~ .icon,
@@ -4712,21 +4805,37 @@ a.box:active {
 }
 
 .image.is-square img,
+.image.is-square .has-ratio,
 .image.is-1by1 img,
+.image.is-1by1 .has-ratio,
 .image.is-5by4 img,
+.image.is-5by4 .has-ratio,
 .image.is-4by3 img,
+.image.is-4by3 .has-ratio,
 .image.is-3by2 img,
+.image.is-3by2 .has-ratio,
 .image.is-5by3 img,
+.image.is-5by3 .has-ratio,
 .image.is-16by9 img,
+.image.is-16by9 .has-ratio,
 .image.is-2by1 img,
+.image.is-2by1 .has-ratio,
 .image.is-3by1 img,
+.image.is-3by1 .has-ratio,
 .image.is-4by5 img,
+.image.is-4by5 .has-ratio,
 .image.is-3by4 img,
+.image.is-3by4 .has-ratio,
 .image.is-2by3 img,
+.image.is-2by3 .has-ratio,
 .image.is-3by5 img,
+.image.is-3by5 .has-ratio,
 .image.is-9by16 img,
+.image.is-9by16 .has-ratio,
 .image.is-1by2 img,
-.image.is-1by3 img {
+.image.is-1by2 .has-ratio,
+.image.is-1by3 img,
+.image.is-1by3 .has-ratio {
   height: 100%;
   width: 100%;
 }
@@ -4885,12 +4994,12 @@ a.box:active {
 }
 
 .notification.is-primary {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
 .notification.is-link {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -4943,6 +5052,30 @@ a.box:active {
   border: none;
 }
 
+.progress:indeterminate {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: moveIndeterminate;
+          animation-name: moveIndeterminate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background-color: #dbdbdb;
+  background-image: linear-gradient(to right, #4a4a4a 30%, #dbdbdb 30%);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 150% 150%;
+}
+
+.progress:indeterminate::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.progress:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+}
+
 .progress.is-white::-webkit-progress-value {
   background-color: white;
 }
@@ -4953,6 +5086,10 @@ a.box:active {
 
 .progress.is-white::-ms-fill {
   background-color: white;
+}
+
+.progress.is-white:indeterminate {
+  background-image: linear-gradient(to right, white 30%, #dbdbdb 30%);
 }
 
 .progress.is-black::-webkit-progress-value {
@@ -4967,6 +5104,10 @@ a.box:active {
   background-color: #0a0a0a;
 }
 
+.progress.is-black:indeterminate {
+  background-image: linear-gradient(to right, #0a0a0a 30%, #dbdbdb 30%);
+}
+
 .progress.is-light::-webkit-progress-value {
   background-color: whitesmoke;
 }
@@ -4977,6 +5118,10 @@ a.box:active {
 
 .progress.is-light::-ms-fill {
   background-color: whitesmoke;
+}
+
+.progress.is-light:indeterminate {
+  background-image: linear-gradient(to right, whitesmoke 30%, #dbdbdb 30%);
 }
 
 .progress.is-dark::-webkit-progress-value {
@@ -4991,28 +5136,40 @@ a.box:active {
   background-color: #363636;
 }
 
+.progress.is-dark:indeterminate {
+  background-image: linear-gradient(to right, #363636 30%, #dbdbdb 30%);
+}
+
 .progress.is-primary::-webkit-progress-value {
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .progress.is-primary::-moz-progress-bar {
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .progress.is-primary::-ms-fill {
-  background-color: #676765;
+  background-color: #00d1b2;
+}
+
+.progress.is-primary:indeterminate {
+  background-image: linear-gradient(to right, #00d1b2 30%, #dbdbdb 30%);
 }
 
 .progress.is-link::-webkit-progress-value {
-  background-color: #64c2f0;
+  background-color: #3273dc;
 }
 
 .progress.is-link::-moz-progress-bar {
-  background-color: #64c2f0;
+  background-color: #3273dc;
 }
 
 .progress.is-link::-ms-fill {
-  background-color: #64c2f0;
+  background-color: #3273dc;
+}
+
+.progress.is-link:indeterminate {
+  background-image: linear-gradient(to right, #3273dc 30%, #dbdbdb 30%);
 }
 
 .progress.is-info::-webkit-progress-value {
@@ -5027,6 +5184,10 @@ a.box:active {
   background-color: #209cee;
 }
 
+.progress.is-info:indeterminate {
+  background-image: linear-gradient(to right, #209cee 30%, #dbdbdb 30%);
+}
+
 .progress.is-success::-webkit-progress-value {
   background-color: #23d160;
 }
@@ -5037,6 +5198,10 @@ a.box:active {
 
 .progress.is-success::-ms-fill {
   background-color: #23d160;
+}
+
+.progress.is-success:indeterminate {
+  background-image: linear-gradient(to right, #23d160 30%, #dbdbdb 30%);
 }
 
 .progress.is-warning::-webkit-progress-value {
@@ -5051,6 +5216,10 @@ a.box:active {
   background-color: #ffdd57;
 }
 
+.progress.is-warning:indeterminate {
+  background-image: linear-gradient(to right, #ffdd57 30%, #dbdbdb 30%);
+}
+
 .progress.is-danger::-webkit-progress-value {
   background-color: #ff3860;
 }
@@ -5063,6 +5232,10 @@ a.box:active {
   background-color: #ff3860;
 }
 
+.progress.is-danger:indeterminate {
+  background-image: linear-gradient(to right, #ff3860 30%, #dbdbdb 30%);
+}
+
 .progress.is-small {
   height: 0.75rem;
 }
@@ -5073,6 +5246,26 @@ a.box:active {
 
 .progress.is-large {
   height: 1.5rem;
+}
+
+@-webkit-keyframes moveIndeterminate {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes moveIndeterminate {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
 }
 
 .table {
@@ -5118,15 +5311,15 @@ a.box:active {
 
 .table td.is-primary,
 .table th.is-primary {
-  background-color: #676765;
-  border-color: #676765;
+  background-color: #00d1b2;
+  border-color: #00d1b2;
   color: #fff;
 }
 
 .table td.is-link,
 .table th.is-link {
-  background-color: #64c2f0;
-  border-color: #64c2f0;
+  background-color: #3273dc;
+  border-color: #3273dc;
   color: #fff;
 }
 
@@ -5166,7 +5359,7 @@ a.box:active {
 
 .table td.is-selected,
 .table th.is-selected {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
@@ -5183,7 +5376,7 @@ a.box:active {
 }
 
 .table tr.is-selected {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
@@ -5198,16 +5391,28 @@ a.box:active {
   color: currentColor;
 }
 
+.table thead {
+  background-color: transparent;
+}
+
 .table thead td,
 .table thead th {
   border-width: 0 0 2px;
   color: #363636;
 }
 
+.table tfoot {
+  background-color: transparent;
+}
+
 .table tfoot td,
 .table tfoot th {
   border-width: 2px 0 0;
   color: #363636;
+}
+
+.table tbody {
+  background-color: transparent;
 }
 
 .table tbody tr:last-child td,
@@ -5280,6 +5485,14 @@ a.box:active {
   margin-bottom: 1rem;
 }
 
+.tags.are-medium .tag:not(.is-normal):not(.is-large) {
+  font-size: 1rem;
+}
+
+.tags.are-large .tag:not(.is-normal):not(.is-medium) {
+  font-size: 1.25rem;
+}
+
 .tags.has-addons .tag {
   margin-right: 0;
 }
@@ -5313,6 +5526,21 @@ a.box:active {
 
 .tags.is-right .tag:not(:last-child) {
   margin-right: 0;
+}
+
+.tags.has-addons .tag {
+  margin-right: 0;
+}
+
+.tags.has-addons .tag:not(:first-child) {
+  margin-left: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.tags.has-addons .tag:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .tag:not(body) {
@@ -5356,12 +5584,12 @@ a.box:active {
 }
 
 .tag:not(body).is-primary {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
 .tag:not(body).is-link {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -5383,6 +5611,10 @@ a.box:active {
 .tag:not(body).is-danger {
   background-color: #ff3860;
   color: #fff;
+}
+
+.tag:not(body).is-normal {
+  font-size: 0.75rem;
 }
 
 .tag:not(body).is-medium {
@@ -5617,7 +5849,7 @@ a.tag:hover {
 
 .breadcrumb a {
   align-items: center;
-  color: #64c2f0;
+  color: #3273dc;
   display: flex;
   justify-content: center;
   padding: 0 0.75em;
@@ -5704,7 +5936,7 @@ a.tag:hover {
 .card {
   background-color: white;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  color: #666666;
+  color: #4a4a4a;
   max-width: 100%;
   position: relative;
 }
@@ -5838,7 +6070,7 @@ button.dropdown-item:hover {
 
 a.dropdown-item.is-active,
 button.dropdown-item.is-active {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -5993,7 +6225,7 @@ button.dropdown-item.is-active {
 }
 
 .list-item.is-active {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -6103,7 +6335,7 @@ a.list-item {
 }
 
 .menu-list a.is-active {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -6138,7 +6370,7 @@ a.list-item {
   color: currentColor;
 }
 
-.message a:not(.button):not(.tag) {
+.message a:not(.button):not(.tag):not(.dropdown-item) {
   color: currentColor;
   text-decoration: underline;
 }
@@ -6216,12 +6448,12 @@ a.list-item {
 }
 
 .message.is-primary .message-header {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
 .message.is-primary .message-body {
-  border-color: #676765;
+  border-color: #00d1b2;
   color: #021310;
 }
 
@@ -6230,12 +6462,12 @@ a.list-item {
 }
 
 .message.is-link .message-header {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
 .message.is-link .message-body {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   color: #22509a;
 }
 
@@ -6695,7 +6927,7 @@ a.list-item {
 }
 
 .navbar.is-primary {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
@@ -6752,13 +6984,13 @@ a.list-item {
   }
 
   .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
-    background-color: #676765;
+    background-color: #00d1b2;
     color: #fff;
   }
 }
 
 .navbar.is-link {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -6815,7 +7047,7 @@ a.list-item {
   }
 
   .navbar.is-link .navbar-dropdown a.navbar-item.is-active {
-    background-color: #64c2f0;
+    background-color: #3273dc;
     color: #fff;
   }
 }
@@ -7194,7 +7426,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-item,
 .navbar-link {
-  color: #ffffff;
+  color: #4a4a4a;
   display: block;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
@@ -7217,7 +7449,7 @@ a.navbar-item.is-active,
 .navbar-link:hover,
 .navbar-link.is-active {
   background-color: #fafafa;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .navbar-item {
@@ -7247,15 +7479,15 @@ a.navbar-item.is-active,
 
 .navbar-item.is-tab:hover {
   background-color: transparent;
-  border-bottom-color: #64c2f0;
+  border-bottom-color: #3273dc;
 }
 
 .navbar-item.is-tab.is-active {
   background-color: transparent;
-  border-bottom-color: #64c2f0;
+  border-bottom-color: #3273dc;
   border-bottom-style: solid;
   border-bottom-width: 3px;
-  color: #64c2f0;
+  color: #3273dc;
   padding-bottom: calc(0.5rem - 3px);
 }
 
@@ -7269,7 +7501,7 @@ a.navbar-item.is-active,
 }
 
 .navbar-link:not(.is-arrowless)::after {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   margin-top: -0.375em;
   right: 1.125em;
 }
@@ -7402,7 +7634,7 @@ a.navbar-item.is-active,
 
   .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
     background-color: whitesmoke;
-    color: #64c2f0;
+    color: #3273dc;
   }
 
   .navbar-burger {
@@ -7498,7 +7730,7 @@ a.navbar-item.is-active,
 
   .navbar-dropdown a.navbar-item.is-active {
     background-color: whitesmoke;
-    color: #64c2f0;
+    color: #3273dc;
   }
 
   .navbar.is-spaced .navbar-dropdown,
@@ -7593,6 +7825,10 @@ a.navbar-item.is-active,
   }
 }
 
+.hero.is-fullheight-with-navbar {
+  min-height: calc(100vh - 3.25rem);
+}
+
 .pagination {
   font-size: 1rem;
   margin: -0.25rem;
@@ -7659,7 +7895,7 @@ a.navbar-item.is-active,
 .pagination-previous:focus,
 .pagination-next:focus,
 .pagination-link:focus {
-  border-color: #64c2f0;
+  border-color: #3273dc;
 }
 
 .pagination-previous:active,
@@ -7686,8 +7922,8 @@ a.navbar-item.is-active,
 }
 
 .pagination-link.is-current {
-  background-color: #64c2f0;
-  border-color: #64c2f0;
+  background-color: #3273dc;
+  border-color: #3273dc;
   color: #fff;
 }
 
@@ -7819,7 +8055,7 @@ a.navbar-item.is-active,
 }
 
 .panel-list a:hover {
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .panel-block {
@@ -7845,12 +8081,12 @@ a.navbar-item.is-active,
 }
 
 .panel-block.is-active {
-  border-left-color: #64c2f0;
+  border-left-color: #3273dc;
   color: #363636;
 }
 
 .panel-block.is-active .panel-icon {
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 a.panel-block,
@@ -7914,8 +8150,8 @@ label.panel-block:hover {
 }
 
 .tabs li.is-active a {
-  border-bottom-color: #64c2f0;
-  color: #64c2f0;
+  border-bottom-color: #3273dc;
+  color: #3273dc;
 }
 
 .tabs ul {
@@ -8009,8 +8245,8 @@ label.panel-block:hover {
 }
 
 .tabs.is-toggle li.is-active a {
-  background-color: #64c2f0;
-  border-color: #64c2f0;
+  background-color: #3273dc;
+  border-color: #3273dc;
   color: #fff;
   z-index: 1;
 }
@@ -10546,7 +10782,7 @@ label.panel-block:hover {
 }
 
 .hero.is-primary {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
@@ -10570,7 +10806,7 @@ label.panel-block:hover {
 
 @media screen and (max-width: 1023px) {
   .hero.is-primary .navbar-menu {
-    background-color: #676765;
+    background-color: #00d1b2;
   }
 }
 
@@ -10616,21 +10852,21 @@ label.panel-block:hover {
 .hero.is-primary .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
-  color: #676765;
+  color: #00d1b2;
 }
 
 .hero.is-primary.is-bold {
-  background-image: linear-gradient(141deg, #009e6c 0%, #676765 71%, #00e7eb 100%);
+  background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
 }
 
 @media screen and (max-width: 768px) {
   .hero.is-primary.is-bold .navbar-menu {
-    background-image: linear-gradient(141deg, #009e6c 0%, #676765 71%, #00e7eb 100%);
+    background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
   }
 }
 
 .hero.is-link {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -10654,7 +10890,7 @@ label.panel-block:hover {
 
 @media screen and (max-width: 1023px) {
   .hero.is-link .navbar-menu {
-    background-color: #64c2f0;
+    background-color: #3273dc;
   }
 }
 
@@ -10700,16 +10936,16 @@ label.panel-block:hover {
 .hero.is-link .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .hero.is-link.is-bold {
-  background-image: linear-gradient(141deg, #1577c6 0%, #64c2f0 71%, #4366e5 100%);
+  background-image: linear-gradient(141deg, #1577c6 0%, #3273dc 71%, #4366e5 100%);
 }
 
 @media screen and (max-width: 768px) {
   .hero.is-link.is-bold .navbar-menu {
-    background-image: linear-gradient(141deg, #1577c6 0%, #64c2f0 71%, #4366e5 100%);
+    background-image: linear-gradient(141deg, #1577c6 0%, #3273dc 71%, #4366e5 100%);
   }
 }
 
@@ -11090,10 +11326,6 @@ label.panel-block:hover {
   min-height: 100vh;
 }
 
-.hero.is-fullheight-with-navbar {
-  min-height: calc(100vh - 3.25rem);
-}
-
 .hero-video {
   overflow: hidden;
 }
@@ -11373,12 +11605,12 @@ label.panel-block:hover {
 }
 
 .accordions .accordion.is-primary .accordion-header {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
 .accordions .accordion.is-primary .accordion-content {
-  border-color: #676765;
+  border-color: #00d1b2;
   color: #021310;
 }
 
@@ -11387,12 +11619,12 @@ label.panel-block:hover {
 }
 
 .accordions .accordion.is-link .accordion-header {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
 .accordions .accordion.is-link .accordion-content {
-  border-color: #64c2f0;
+  border-color: #3273dc;
   color: #22509a;
 }
 
@@ -11462,7 +11694,7 @@ label.panel-block:hover {
   position: absolute;
   left: 100%;
   margin: 0;
-  background: #676765;
+  background: #00d1b2;
   background-clip: padding-box;
   border-radius: 1rem;
   box-shadow: 0 0 0 0.1rem white;
@@ -11508,13 +11740,13 @@ label.panel-block:hover {
 
 .badge.is-badge-primary[data-badge]::after,
 .badge.is-badge-primary:not([data-badge])::after {
-  background: #676765;
+  background: #00d1b2;
   color: #fff;
 }
 
 .badge.is-badge-link[data-badge]::after,
 .badge.is-badge-link:not([data-badge])::after {
-  background: #64c2f0;
+  background: #3273dc;
   color: #fff;
 }
 
@@ -11545,8 +11777,8 @@ label.panel-block:hover {
 .badge.is-badge-outlined[data-badge]::after {
   background-color: white;
   box-shadow: none;
-  border: 0.1rem solid #676765;
-  color: #676765;
+  border: 0.1rem solid #00d1b2;
+  color: #00d1b2;
 }
 
 .badge.is-badge-outlined.is-badge-white[data-badge]::after {
@@ -11580,15 +11812,15 @@ label.panel-block:hover {
 .badge.is-badge-outlined.is-badge-primary[data-badge]::after {
   background: white;
   box-shadow: none;
-  border: 0.1rem solid #676765;
-  color: #676765;
+  border: 0.1rem solid #00d1b2;
+  color: #00d1b2;
 }
 
 .badge.is-badge-outlined.is-badge-link[data-badge]::after {
   background: white;
   box-shadow: none;
-  border: 0.1rem solid #64c2f0;
-  color: #64c2f0;
+  border: 0.1rem solid #3273dc;
+  color: #3273dc;
 }
 
 .badge.is-badge-outlined.is-badge-info[data-badge]::after {
@@ -11735,119 +11967,139 @@ label.panel-block:hover {
   top: calc(100% - ( 1.5rem / 2 ));
 }
 
-.calendar {
+.bulma-datepicker {
+  transition: width 0.8s cubic-bezier(1, -0.55, 0.2, 1.37), opacity 0.2s ease, visibility 0.2s ease, margin 0.2s ease;
+  display: none;
   background: white;
-  border: 0.1rem solid whitesmoke;
   border-radius: 2px;
+  max-width: 320px;
+  z-index: 1;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.bulma-datepicker.is-active {
   display: block;
-  width: 28rem;
-  text-align: center;
-  max-width: 95%;
-  margin: auto;
 }
 
-.calendar.is-active {
-  display: initial;
-}
-
-.calendar .calendar-header {
+.bulma-datepicker .bulma-datepicker-header {
   display: flex;
+  flex-direction: row;
   flex: 1;
   text-align: left;
   position: relative;
-  padding: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  box-shadow: 0 0.2rem 0.2rem -0.2rem rgba(10, 10, 10, 0.1);
 }
 
-@media screen and (max-width: 768px) {
-  .calendar .calendar-header {
-    font-size: 0.5rem;
-  }
+.bulma-datepicker .bulma-datepicker-header.is-date-only {
+  flex-direction: row;
 }
 
-.calendar .calendar-header .calendar-selection-from,
-.calendar .calendar-header .calendar-selection-to {
-  font-size: 0.75rem;
+.bulma-datepicker .bulma-datepicker-header.is-date-only .bulma-datepicker-selection-end .bulma-datepicker-selection-wrapper {
+  justify-content: flex-end !important;
+}
+
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-details {
+  flex: 1;
+}
+
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-from,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-to {
+  font-size: 0.65rem;
   color: #b5b5b5;
   text-transform: uppercase;
+  padding: 0;
 }
 
-.calendar .calendar-header .calendar-selection-start,
-.calendar .calendar-header .calendar-selection-end {
-  padding: 0.5rem;
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end {
+  padding: 0;
   display: flex;
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-.calendar .calendar-header .calendar-selection-start .calendar-selection-date,
-.calendar .calendar-header .calendar-selection-end .calendar-selection-date {
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start .bulma-datepicker-selection-wrapper,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end .bulma-datepicker-selection-wrapper {
   flex-direction: row;
   display: flex;
+  min-height: 2.5rem;
+  flex: 1 1 2rem;
 }
 
-.calendar .calendar-header .calendar-selection-start .calendar-selection-day,
-.calendar .calendar-header .calendar-selection-end .calendar-selection-day {
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start .bulma-datepicker-selection-day,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end .bulma-datepicker-selection-day {
   flex: 0;
   text-transform: capitalize;
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   margin-right: 0.5rem;
-  color: #5d5d5e;
+  color: #00d1b2;
+  font-weight: 100;
 }
 
-@media screen and (max-width: 768px) {
-  .calendar .calendar-header .calendar-selection-start .calendar-selection-day,
-  .calendar .calendar-header .calendar-selection-end .calendar-selection-day {
-    font-size: 2rem;
-  }
-}
-
-.calendar .calendar-header .calendar-selection-start .calendar-selection-details,
-.calendar .calendar-header .calendar-selection-end .calendar-selection-details {
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start .bulma-datepicker-selection-date,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end .bulma-datepicker-selection-date {
+  font-size: 0.85rem;
+  line-height: 0.85rem;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  font-weight: 300;
 }
 
-.calendar .calendar-header .calendar-selection-start .calendar-selection-month,
-.calendar .calendar-header .calendar-selection-end .calendar-selection-month {
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start .bulma-datepicker-selection-month,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end .bulma-datepicker-selection-month {
   color: #4a4a4a;
   text-transform: capitalize;
 }
 
-.calendar .calendar-header .calendar-selection-start .calendar-selection-weekday,
-.calendar .calendar-header .calendar-selection-end .calendar-selection-weekday {
-  font-size: 12px;
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start .bulma-datepicker-selection-weekday,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end .bulma-datepicker-selection-weekday {
+  font-size: 0.75em;
   color: #b6b4b6;
   text-transform: capitalize;
   text-align: left;
 }
 
-.calendar .calendar-header .calendar-selection-end:before,
-.calendar .calendar-header .calendar-selection-end::before {
-  content: ">";
-  font: 2rem "Consolas";
-  color: whitesmoke;
-  font-weight: 700;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start .bulma-datepicker-selection-hour,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end .bulma-datepicker-selection-hour {
+  font-size: 1.5rem;
+  font-weight: 100;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.calendar .calendar-header .calendar-selection-end .calendar-selection-to {
-  padding-left: 1rem;
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end {
+  align-items: center;
 }
 
-.calendar .calendar-header .calendar-selection-end .calendar-selection-date {
-  justify-content: flex-end;
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-start.is-centered .bulma-datepicker-selection-wrapper,
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-end.is-centered .bulma-datepicker-selection-wrapper {
+  justify-content: center;
+  align-items: center;
 }
 
-.calendar .calendar-nav {
-  background: #676765;
-  color: white;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-time {
+  flex: 1;
+  display: flex;
+}
+
+.bulma-datepicker .bulma-datepicker-header .bulma-datepicker-selection-time .bulma-datepicker-selection-time-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  color: #b5b5b5;
+}
+
+.bulma-datepicker .datepicker-nav {
+  background: #00d1b2;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11855,29 +12107,33 @@ label.panel-block:hover {
   flex-direction: row;
 }
 
-.calendar .calendar-nav .calendar-nav-month-year {
+.bulma-datepicker .datepicker-nav .datepicker-nav-month-year {
   flex-direction: row;
   display: flex;
 }
 
-.calendar .calendar-nav .calendar-nav-month,
-.calendar .calendar-nav .calendar-nav-year {
+.bulma-datepicker .datepicker-nav .datepicker-nav-month,
+.bulma-datepicker .datepicker-nav .datepicker-nav-year {
   text-decoration: none;
   font-size: 1rem;
   color: #fff;
 }
 
-.calendar .calendar-nav .calendar-nav-month:hover,
-.calendar .calendar-nav .calendar-nav-year:hover {
+.bulma-datepicker .datepicker-nav .datepicker-nav-month:hover,
+.bulma-datepicker .datepicker-nav .datepicker-nav-year:hover {
   cursor: pointer;
 }
 
-.calendar .calendar-nav .calendar-nav-month {
+.bulma-datepicker .datepicker-nav .datepicker-nav-month {
   text-transform: capitalize;
 }
 
-.calendar .calendar-nav .calendar-nav-previous,
-.calendar .calendar-nav .calendar-nav-next {
+.bulma-datepicker .datepicker-nav .datepicker-nav-year {
+  font-weight: 700;
+}
+
+.bulma-datepicker .datepicker-nav .datepicker-nav-previous,
+.bulma-datepicker .datepicker-nav .datepicker-nav-next {
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 0;
@@ -11885,44 +12141,48 @@ label.panel-block:hover {
   color: white;
 }
 
-.calendar .calendar-nav .calendar-nav-previous:hover,
-.calendar .calendar-nav .calendar-nav-next:hover {
+.bulma-datepicker .datepicker-nav .datepicker-nav-previous:hover,
+.bulma-datepicker .datepicker-nav .datepicker-nav-next:hover {
   background-color: transparent;
 }
 
-.calendar .calendar-nav .calendar-nav-previous:hover svg,
-.calendar .calendar-nav .calendar-nav-next:hover svg {
+.bulma-datepicker .datepicker-nav .datepicker-nav-previous:hover svg,
+.bulma-datepicker .datepicker-nav .datepicker-nav-next:hover svg {
   stroke-width: 1em;
 }
 
-.calendar .calendar-nav .calendar-nav-previous svg,
-.calendar .calendar-nav .calendar-nav-next svg {
+.bulma-datepicker .datepicker-nav .datepicker-nav-previous svg,
+.bulma-datepicker .datepicker-nav .datepicker-nav-next svg {
   stroke: currentColor;
   width: 11.25px;
-  height: 18px;
+  height: 0.75rem;
 }
 
-.calendar .calendar-body .calendar-dates {
+.bulma-datepicker .datepicker-body {
+  overflow: hidden;
+}
+
+.bulma-datepicker .datepicker-body .datepicker-dates {
   display: none;
 }
 
-.calendar .calendar-body .calendar-dates.is-active {
+.bulma-datepicker .datepicker-body .datepicker-dates.is-active {
   display: flex;
   flex-direction: column;
 }
 
-.calendar .calendar-body .calendar-months,
-.calendar .calendar-body .calendar-years {
+.bulma-datepicker .datepicker-body .datepicker-months,
+.bulma-datepicker .datepicker-body .datepicker-years {
   display: none;
 }
 
-.calendar .calendar-body .calendar-months.is-active,
-.calendar .calendar-body .calendar-years.is-active {
+.bulma-datepicker .datepicker-body .datepicker-months.is-active,
+.bulma-datepicker .datepicker-body .datepicker-years.is-active {
   display: flex;
   flex-direction: row;
 }
 
-.calendar .calendar-body .calendar-weekdays {
+.bulma-datepicker .datepicker-body .datepicker-weekdays {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -11932,15 +12192,13 @@ label.panel-block:hover {
   font-size: 0.75rem;
 }
 
-.calendar .calendar-body .calendar-weekdays .calendar-date {
-  flex: 0 0 14.28%;
-  max-width: 14.28%;
+.bulma-datepicker .datepicker-body .datepicker-weekdays .datepicker-date {
   background: transparent !important;
   color: #b5b5b5;
   padding: 0.3rem;
 }
 
-.calendar .calendar-body .calendar-dates .calendar-days {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -11949,534 +12207,28 @@ label.panel-block:hover {
   color: #7a7a7a;
 }
 
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date {
-  flex: 0 0 14.28%;
-  max-width: 14.28%;
-  border: 0;
-  padding: 0.1rem 0;
-  background: whitesmoke;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background: transparent;
-  border: 0.1rem solid transparent;
-  border-radius: 100%;
-  color: #4a4a4a;
-  cursor: pointer;
-  height: 2.2rem;
-  line-height: 1.4rem;
-  outline: none;
-  padding: 0.3rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 2.2rem;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item.is-today {
-  background: transparent;
-  border: 0.1rem dotted #676765;
-  color: #676765;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item:focus {
-  background: white;
-  border-color: white;
-  color: rgba(0, 0, 0, 0.7);
-  text-decoration: none;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item.is-active {
-  background: #676765;
-  border-color: #676765;
-  border-radius: 25091983px;
-  color: #fff;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item:hover {
-  background: white;
-  border: 0.1rem solid #676765;
-  color: rgba(0, 0, 0, 0.7);
-  text-decoration: none;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.is-disabled .date-item,
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.is-disabled .calendar-event,
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date[disabled] .date-item,
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date[disabled] .calendar-event {
-  cursor: default;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.is-current-month {
-  background: transparent;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range {
-  position: relative;
-  background: #676765;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range::before {
-  background: #676765;
-  border: 0.1rem solid #676765;
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-start,
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-end {
-  border-radius: 25091983px;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-start::before {
-  left: 53%;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-end::before {
-  right: 50%;
-}
-
-.calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range .date-item {
-  background-color: #676765;
-  color: #fff;
-}
-
-.calendar .calendar-body .calendar-months,
-.calendar .calendar-body .calendar-years {
-  display: none;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0.5rem;
-  max-height: 17rem;
-  overflow-y: auto;
-}
-
-.calendar .calendar-body .calendar-months.is-active,
-.calendar .calendar-body .calendar-years.is-active {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date {
+  background: #f5f5f5;
   display: flex;
+  justify-content: center;
+  flex: 14.28571%;
+  margin: 0.1rem 0;
+  align-items: center;
 }
 
-.calendar .calendar-body .calendar-months .calendar-month,
-.calendar .calendar-body .calendar-months .calendar-year,
-.calendar .calendar-body .calendar-years .calendar-month,
-.calendar .calendar-body .calendar-years .calendar-year {
-  padding: 0.5rem;
-  margin: 0.5rem;
-  font-size: 1rem;
-  flex: calc(25% - 1rem);
-  text-transform: capitalize;
-  border-radius: 25091983px;
-  border: 0.1rem solid transparent;
-}
-
-.calendar .calendar-body .calendar-months .calendar-month.is-active,
-.calendar .calendar-body .calendar-months .calendar-year.is-active,
-.calendar .calendar-body .calendar-years .calendar-month.is-active,
-.calendar .calendar-body .calendar-years .calendar-year.is-active {
-  background: #676765;
-  border-color: #676765;
-  color: #fff;
-}
-
-.calendar .calendar-body .calendar-months .calendar-month:hover,
-.calendar .calendar-body .calendar-months .calendar-year:hover,
-.calendar .calendar-body .calendar-years .calendar-month:hover,
-.calendar .calendar-body .calendar-years .calendar-year:hover {
-  cursor: pointer;
-  background: white;
-  border: 0.1rem solid #676765;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.calendar .calendar-footer {
-  display: flex;
-  flex: 1;
-  justify-content: space-evenly;
-  margin-top: 0.5rem;
-}
-
-.calendar .calendar-footer > * {
-  text-decoration: none !important;
-}
-
-.calendar.is-large {
-  max-width: 100%;
-}
-
-.calendar.is-large .calendar-body .calendar-date {
-  border-bottom: 0.1rem solid whitesmoke;
-  border-right: 0.1rem solid whitesmoke;
-  display: flex;
-  flex-direction: column;
-  height: 11rem;
-  padding: 0;
-}
-
-.calendar.is-large .calendar-body .calendar-date:nth-child(7n) {
-  border-right: 0;
-}
-
-.calendar.is-large .calendar-body .calendar-date:nth-last-child(-n+7) {
-  border-bottom: 0;
-}
-
-.calendar.is-large .date-item {
-  align-self: flex-end;
-  height: 2.2rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.calendar.is-large .calendar-range::before {
-  top: 1.9rem;
-}
-
-.calendar.is-large .calendar-range.calendar-range-start::before {
-  left: auto;
-  width: 1.9rem;
-}
-
-.calendar.is-large .calendar-range.calendar-range-end::before {
-  right: 1.9rem;
-}
-
-.calendar.is-large .calendar-events {
-  flex-grow: 1;
-  line-height: 1;
-  overflow-y: auto;
-  padding: 0.5rem;
-}
-
-.calendar.is-large .calendar-event {
-  background-color: #7a7a7a;
-  border-radius: 2px;
-  color: white;
-  display: block;
-  font-size: 1rem;
-  margin: 0.2rem auto;
-  overflow: hidden;
-  padding: 0.3rem 0.4rem;
-  text-align: left;
-  text-overflow: ellipsis;
-  vertical-align: baseline;
-  white-space: nowrap;
-}
-
-.calendar.is-large .calendar-event.is-white {
-  background-color: white;
-  color: #0a0a0a;
-}
-
-.calendar.is-large .calendar-event.is-black {
-  background-color: #0a0a0a;
-  color: white;
-}
-
-.calendar.is-large .calendar-event.is-light {
-  background-color: whitesmoke;
-  color: #363636;
-}
-
-.calendar.is-large .calendar-event.is-dark {
-  background-color: #363636;
-  color: whitesmoke;
-}
-
-.calendar.is-large .calendar-event.is-primary {
-  background-color: #676765;
-  color: #fff;
-}
-
-.calendar.is-large .calendar-event.is-link {
-  background-color: #64c2f0;
-  color: #fff;
-}
-
-.calendar.is-large .calendar-event.is-info {
-  background-color: #209cee;
-  color: #fff;
-}
-
-.calendar.is-large .calendar-event.is-success {
-  background-color: #23d160;
-  color: #fff;
-}
-
-.calendar.is-large .calendar-event.is-warning {
-  background-color: #ffdd57;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.calendar.is-large .calendar-event.is-danger {
-  background-color: #ff3860;
-  color: #fff;
-}
-
-.datepicker {
-  display: none;
-}
-
-.datepicker.is-active {
-  display: flex;
-}
-
-.datepicker.is-active .calendar {
-  position: fixed;
-  z-index: 40;
-  position: relative;
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item {
   margin: 0 auto;
-  max-height: calc(100vh - 40px);
-}
-
-.datepicker .calendar {
-  background: white;
-  border: 0.1rem solid whitesmoke;
-  border-radius: 2px;
-  display: block;
-  width: 28rem;
-  text-align: center;
-  max-width: 95%;
-  margin: auto;
-}
-
-.datepicker .calendar.is-active {
-  display: initial;
-}
-
-.datepicker .calendar .calendar-header {
-  display: flex;
-  flex: 1;
-  text-align: left;
-  position: relative;
-  padding: 0 0.5rem;
-}
-
-@media screen and (max-width: 768px) {
-  .datepicker .calendar .calendar-header {
-    font-size: 0.5rem;
-  }
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-from,
-.datepicker .calendar .calendar-header .calendar-selection-to {
-  font-size: 0.75rem;
-  color: #b5b5b5;
-  text-transform: uppercase;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-start,
-.datepicker .calendar .calendar-header .calendar-selection-end {
-  padding: 0.5rem;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-start .calendar-selection-date,
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-date {
-  flex-direction: row;
-  display: flex;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-start .calendar-selection-day,
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-day {
-  flex: 0;
-  text-transform: capitalize;
-  font-size: 3rem;
-  margin-right: 0.5rem;
-  color: #5d5d5e;
-}
-
-@media screen and (max-width: 768px) {
-  .datepicker .calendar .calendar-header .calendar-selection-start .calendar-selection-day,
-  .datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-day {
-    font-size: 2rem;
-  }
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-start .calendar-selection-details,
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-details {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-start .calendar-selection-month,
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-month {
-  color: #4a4a4a;
-  text-transform: capitalize;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-start .calendar-selection-weekday,
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-weekday {
-  font-size: 12px;
-  color: #b6b4b6;
-  text-transform: capitalize;
-  text-align: left;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-end:before,
-.datepicker .calendar .calendar-header .calendar-selection-end::before {
-  content: ">";
-  font: 2rem "Consolas";
-  color: whitesmoke;
-  font-weight: 700;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-to {
-  padding-left: 1rem;
-}
-
-.datepicker .calendar .calendar-header .calendar-selection-end .calendar-selection-date {
-  justify-content: flex-end;
-}
-
-.datepicker .calendar .calendar-nav {
-  background: #676765;
-  color: white;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5em;
-  flex-direction: row;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-month-year {
-  flex-direction: row;
-  display: flex;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-month,
-.datepicker .calendar .calendar-nav .calendar-nav-year {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-month:hover,
-.datepicker .calendar .calendar-nav .calendar-nav-year:hover {
-  cursor: pointer;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-month {
-  text-transform: capitalize;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-previous,
-.datepicker .calendar .calendar-nav .calendar-nav-next {
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-  text-decoration: none;
-  color: white;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-previous:hover,
-.datepicker .calendar .calendar-nav .calendar-nav-next:hover {
-  background-color: transparent;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-previous:hover svg,
-.datepicker .calendar .calendar-nav .calendar-nav-next:hover svg {
-  stroke-width: 1em;
-}
-
-.datepicker .calendar .calendar-nav .calendar-nav-previous svg,
-.datepicker .calendar .calendar-nav .calendar-nav-next svg {
-  stroke: currentColor;
-  width: 11.25px;
-  height: 18px;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates {
-  display: none;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates.is-active {
-  display: flex;
-  flex-direction: column;
-}
-
-.datepicker .calendar .calendar-body .calendar-months,
-.datepicker .calendar .calendar-body .calendar-years {
-  display: none;
-}
-
-.datepicker .calendar .calendar-body .calendar-months.is-active,
-.datepicker .calendar .calendar-body .calendar-years.is-active {
-  display: flex;
-  flex-direction: row;
-}
-
-.datepicker .calendar .calendar-body .calendar-weekdays {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0.3rem 0;
-  background: transparent;
-  color: #fff;
-  font-size: 0.75rem;
-}
-
-.datepicker .calendar .calendar-body .calendar-weekdays .calendar-date {
-  flex: 0 0 14.28%;
-  max-width: 14.28%;
-  background: transparent !important;
-  color: #b5b5b5;
-  padding: 0.3rem;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0;
-  color: #7a7a7a;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date {
-  flex: 0 0 14.28%;
-  max-width: 14.28%;
-  border: 0;
-  padding: 0.1rem 0;
-  background: whitesmoke;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background: transparent;
-  border: 0.1rem solid transparent;
-  border-radius: 100%;
+  border: none;
+  border-radius: 25091983px;
   color: #4a4a4a;
   cursor: pointer;
   height: 2.2rem;
-  line-height: 1.4rem;
   outline: none;
-  padding: 0.3rem;
+  padding: 0;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -12484,86 +12236,97 @@ label.panel-block:hover {
   vertical-align: middle;
   white-space: nowrap;
   width: 2.2rem;
+  -webkit-animation: bounce-button-in 0.45s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          animation: bounce-button-in 0.45s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item.is-today {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
   background: transparent;
-  border: 0.1rem dotted #676765;
-  color: #676765;
+  border: 0.1rem dotted #00d1b2;
+  color: #00d1b2;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item:focus {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:focus {
   background: white;
   border-color: white;
   color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item.is-active {
-  background: #676765;
-  border-color: #676765;
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #00d1b2;
+  border-color: #00d1b2;
   border-radius: 25091983px;
   color: #fff;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date .date-item:hover {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
   background: white;
-  border: 0.1rem solid #676765;
+  border: 0.1rem solid #00d1b2;
   color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.is-disabled .date-item,
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.is-disabled .calendar-event,
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date[disabled] .date-item,
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date[disabled] .calendar-event {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.is-current-month {
+  background: transparent;
+}
+
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.is-disabled,
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date[disabled] {
+  background-color: whitesmoke;
+  background-image: url(data:image/gif;base64,R0lGODlhBQAFAOMAAP/14////93uHt3uHt3uHt3uHv///////////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAFAAUAAAQL0ACAzpG0YnonNxEAOw==) !important;
+}
+
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.is-disabled .date-item,
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.is-disabled .calendar-event,
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date[disabled] .date-item,
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date[disabled] .calendar-event {
   cursor: default;
   opacity: 0.25;
   pointer-events: none;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.is-current-month {
-  background: transparent;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
   position: relative;
-  background: #676765;
+  background: #00d1b2;
+  z-index: 1;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range::before {
-  background: #676765;
-  border: 0.1rem solid #676765;
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border: 0.1rem solid #00d1b2;
+  color: #00d1b2;
+  box-shadow: 0 0.2rem 0.2rem rgba(10, 10, 10, 0.1);
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-start,
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-end {
-  border-radius: 25091983px;
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start {
+  border-top-left-radius: 25091983px;
+  border-bottom-left-radius: 25091983px;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-start::before {
-  left: 53%;
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end {
+  border-top-right-radius: 25091983px;
+  border-bottom-right-radius: 25091983px;
 }
 
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range.calendar-range-end::before {
-  right: 50%;
-}
-
-.datepicker .calendar .calendar-body .calendar-dates .calendar-days .calendar-date.calendar-range .date-item {
-  background-color: #676765;
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #00d1b2;
   color: #fff;
 }
 
-.datepicker .calendar .calendar-body .calendar-months,
-.datepicker .calendar .calendar-body .calendar-years {
+.bulma-datepicker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker .datepicker-body .datepicker-months,
+.bulma-datepicker .datepicker-body .datepicker-years {
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
@@ -12572,59 +12335,95 @@ label.panel-block:hover {
   overflow-y: auto;
 }
 
-.datepicker .calendar .calendar-body .calendar-months.is-active,
-.datepicker .calendar .calendar-body .calendar-years.is-active {
+.bulma-datepicker .datepicker-body .datepicker-months.is-active,
+.bulma-datepicker .datepicker-body .datepicker-years.is-active {
   display: flex;
 }
 
-.datepicker .calendar .calendar-body .calendar-months .calendar-month,
-.datepicker .calendar .calendar-body .calendar-months .calendar-year,
-.datepicker .calendar .calendar-body .calendar-years .calendar-month,
-.datepicker .calendar .calendar-body .calendar-years .calendar-year {
+.bulma-datepicker .datepicker-body .datepicker-months .datepicker-month,
+.bulma-datepicker .datepicker-body .datepicker-months .datepicker-year,
+.bulma-datepicker .datepicker-body .datepicker-years .datepicker-month,
+.bulma-datepicker .datepicker-body .datepicker-years .datepicker-year {
   padding: 0.5rem;
   margin: 0.5rem;
-  font-size: 1rem;
-  flex: calc(25% - 1rem);
+  font-size: 0.75rem;
+  text-align: center;
+  flex: 1 25%;
   text-transform: capitalize;
   border-radius: 25091983px;
   border: 0.1rem solid transparent;
 }
 
-.datepicker .calendar .calendar-body .calendar-months .calendar-month.is-active,
-.datepicker .calendar .calendar-body .calendar-months .calendar-year.is-active,
-.datepicker .calendar .calendar-body .calendar-years .calendar-month.is-active,
-.datepicker .calendar .calendar-body .calendar-years .calendar-year.is-active {
-  background: #676765;
-  border-color: #676765;
+.bulma-datepicker .datepicker-body .datepicker-months .datepicker-month.is-active,
+.bulma-datepicker .datepicker-body .datepicker-months .datepicker-year.is-active,
+.bulma-datepicker .datepicker-body .datepicker-years .datepicker-month.is-active,
+.bulma-datepicker .datepicker-body .datepicker-years .datepicker-year.is-active {
+  background: #00d1b2;
+  border-color: #00d1b2;
   color: #fff;
 }
 
-.datepicker .calendar .calendar-body .calendar-months .calendar-month:hover,
-.datepicker .calendar .calendar-body .calendar-months .calendar-year:hover,
-.datepicker .calendar .calendar-body .calendar-years .calendar-month:hover,
-.datepicker .calendar .calendar-body .calendar-years .calendar-year:hover {
+.bulma-datepicker .datepicker-body .datepicker-months .datepicker-month:hover,
+.bulma-datepicker .datepicker-body .datepicker-months .datepicker-year:hover,
+.bulma-datepicker .datepicker-body .datepicker-years .datepicker-month:hover,
+.bulma-datepicker .datepicker-body .datepicker-years .datepicker-year:hover {
   cursor: pointer;
   background: white;
-  border: 0.1rem solid #676765;
+  border: 0.1rem solid #00d1b2;
   color: rgba(0, 0, 0, 0.7);
 }
 
-.datepicker .calendar .calendar-footer {
+.bulma-datepicker .bulma-datepicker-footer {
   display: flex;
   flex: 1;
   justify-content: space-evenly;
-  margin-top: 0.5rem;
+  margin: 0;
 }
 
-.datepicker .calendar .calendar-footer > * {
+.bulma-datepicker .bulma-datepicker-footer > * {
   text-decoration: none !important;
 }
 
-.datepicker .calendar.is-large {
+.bulma-datepicker.is-datetimepicker-default .bulma-datepicker-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bulma-datepicker.is-datetimepicker-default .bulma-datepicker-container:after,
+.bulma-datepicker.is-datetimepicker-default .bulma-datepicker-container:before {
+  bottom: 100%;
+  left: 15%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.bulma-datepicker.is-datetimepicker-default .bulma-datepicker-container:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+  border-width: 0.75rem;
+  margin-left: -0.75rem;
+}
+
+.bulma-datepicker.is-datetimepicker-default .bulma-datepicker-container:before {
+  border-color: rgba(74, 74, 74, 0);
+  border-bottom-color: #4a4a4a;
+  border-width: 0.75rem;
+  margin-left: -0.75rem;
+}
+
+.bulma-datepicker.is-datetimepicker-default .bulma-datepicker-container.has-header-bottom {
+  flex-direction: column-reverse;
+}
+
+.bulma-datepicker.is-large {
   max-width: 100%;
 }
 
-.datepicker .calendar.is-large .calendar-body .calendar-date {
+.bulma-datepicker.is-large .datepicker-body .datepicker-date {
   border-bottom: 0.1rem solid whitesmoke;
   border-right: 0.1rem solid whitesmoke;
   display: flex;
@@ -12633,42 +12432,43 @@ label.panel-block:hover {
   padding: 0;
 }
 
-.datepicker .calendar.is-large .calendar-body .calendar-date:nth-child(7n) {
+.bulma-datepicker.is-large .datepicker-body .datepicker-date:nth-child(7n) {
   border-right: 0;
 }
 
-.datepicker .calendar.is-large .calendar-body .calendar-date:nth-last-child(-n+7) {
+.bulma-datepicker.is-large .datepicker-body .datepicker-date:nth-last-child(-n+7) {
   border-bottom: 0;
 }
 
-.datepicker .calendar.is-large .date-item {
+.bulma-datepicker.is-large .date-item {
   align-self: flex-end;
   height: 2.2rem;
   margin-right: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.datepicker .calendar.is-large .calendar-range::before {
+.bulma-datepicker.is-large .datepicker-range:before,
+.bulma-datepicker.is-large .datepicker-range::before {
   top: 1.9rem;
 }
 
-.datepicker .calendar.is-large .calendar-range.calendar-range-start::before {
+.bulma-datepicker.is-large .datepicker-range.datepicker-range-start::before {
   left: auto;
   width: 1.9rem;
 }
 
-.datepicker .calendar.is-large .calendar-range.calendar-range-end::before {
+.bulma-datepicker.is-large .datepicker-range.datepicker-range-end::before {
   right: 1.9rem;
 }
 
-.datepicker .calendar.is-large .calendar-events {
+.bulma-datepicker.is-large .datepicker-events {
   flex-grow: 1;
   line-height: 1;
   overflow-y: auto;
   padding: 0.5rem;
 }
 
-.datepicker .calendar.is-large .calendar-event {
+.bulma-datepicker.is-large .datepicker-event {
   background-color: #7a7a7a;
   border-radius: 2px;
   color: white;
@@ -12683,54 +12483,993 @@ label.panel-block:hover {
   white-space: nowrap;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-white {
+.bulma-datepicker.is-large .datepicker-event.is-white {
   background-color: white;
   color: #0a0a0a;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-black {
+.bulma-datepicker.is-large .datepicker-event.is-black {
   background-color: #0a0a0a;
   color: white;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-light {
+.bulma-datepicker.is-large .datepicker-event.is-light {
   background-color: whitesmoke;
   color: #363636;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-dark {
+.bulma-datepicker.is-large .datepicker-event.is-dark {
   background-color: #363636;
   color: whitesmoke;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-primary {
-  background-color: #676765;
+.bulma-datepicker.is-large .datepicker-event.is-primary {
+  background-color: #00d1b2;
   color: #fff;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-link {
-  background-color: #64c2f0;
+.bulma-datepicker.is-large .datepicker-event.is-link {
+  background-color: #3273dc;
   color: #fff;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-info {
+.bulma-datepicker.is-large .datepicker-event.is-info {
   background-color: #209cee;
   color: #fff;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-success {
+.bulma-datepicker.is-large .datepicker-event.is-success {
   background-color: #23d160;
   color: #fff;
 }
 
-.datepicker .calendar.is-large .calendar-event.is-warning {
+.bulma-datepicker.is-large .datepicker-event.is-warning {
   background-color: #ffdd57;
   color: rgba(0, 0, 0, 0.7);
 }
 
-.datepicker .calendar.is-large .calendar-event.is-danger {
+.bulma-datepicker.is-large .datepicker-event.is-danger {
   background-color: #ff3860;
   color: #fff;
+}
+
+.bulma-datepicker.is-white .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: white;
+}
+
+.bulma-datepicker.is-white .datepicker-nav {
+  background: white;
+  color: #0a0a0a;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: white;
+  border-color: white;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: white;
+  color: white;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: white;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: white;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: white;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: white;
+  color: #0a0a0a;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #0a0a0a !important;
+  color: #0a0a0a !important;
+}
+
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-white .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #0a0a0a;
+  border-color: white;
+  color: white;
+}
+
+.bulma-datepicker.is-black .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #0a0a0a;
+}
+
+.bulma-datepicker.is-black .datepicker-nav {
+  background: #0a0a0a;
+  color: white;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #0a0a0a;
+  color: #0a0a0a;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #0a0a0a;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #0a0a0a;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #0a0a0a;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #0a0a0a;
+  color: white;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: white !important;
+  color: white !important;
+}
+
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-black .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: white;
+  border-color: #0a0a0a;
+  color: #0a0a0a;
+}
+
+.bulma-datepicker.is-light .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-light .datepicker-nav {
+  background: whitesmoke;
+  color: #363636;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: whitesmoke;
+  border-color: whitesmoke;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: whitesmoke;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: whitesmoke;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: whitesmoke;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: whitesmoke;
+  color: #363636;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #363636 !important;
+  color: #363636 !important;
+}
+
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #363636;
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-dark .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #363636;
+}
+
+.bulma-datepicker.is-dark .datepicker-nav {
+  background: #363636;
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #363636;
+  border-color: #363636;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #363636;
+  color: #363636;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #363636;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #363636;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #363636;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #363636;
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: whitesmoke !important;
+  color: whitesmoke !important;
+}
+
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: whitesmoke;
+  border-color: #363636;
+  color: #363636;
+}
+
+.bulma-datepicker.is-primary .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #00d1b2;
+}
+
+.bulma-datepicker.is-primary .datepicker-nav {
+  background: #00d1b2;
+  color: #fff;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #00d1b2;
+  border-color: #00d1b2;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #00d1b2;
+  color: #00d1b2;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #00d1b2;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #00d1b2;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #00d1b2;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #00d1b2;
+  color: #fff;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-primary .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #00d1b2;
+  color: #00d1b2;
+}
+
+.bulma-datepicker.is-link .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #3273dc;
+}
+
+.bulma-datepicker.is-link .datepicker-nav {
+  background: #3273dc;
+  color: #fff;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #3273dc;
+  border-color: #3273dc;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #3273dc;
+  color: #3273dc;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #3273dc;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #3273dc;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #3273dc;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #3273dc;
+  color: #fff;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-link .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #3273dc;
+  color: #3273dc;
+}
+
+.bulma-datepicker.is-info .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #209cee;
+}
+
+.bulma-datepicker.is-info .datepicker-nav {
+  background: #209cee;
+  color: #fff;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #209cee;
+  border-color: #209cee;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #209cee;
+  color: #209cee;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #209cee;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #209cee;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #209cee;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-info .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #209cee;
+  color: #209cee;
+}
+
+.bulma-datepicker.is-success .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #23d160;
+}
+
+.bulma-datepicker.is-success .datepicker-nav {
+  background: #23d160;
+  color: #fff;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #23d160;
+  border-color: #23d160;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #23d160;
+  color: #23d160;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #23d160;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #23d160;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #23d160;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #23d160;
+  color: #fff;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-success .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #23d160;
+  color: #23d160;
+}
+
+.bulma-datepicker.is-warning .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #ffdd57;
+}
+
+.bulma-datepicker.is-warning .datepicker-nav {
+  background: #ffdd57;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #ffdd57;
+  border-color: #ffdd57;
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #ffdd57;
+  color: #ffdd57;
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #ffdd57;
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #ffdd57;
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #ffdd57;
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #ffdd57;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-warning .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #ffdd57;
+  color: #ffdd57;
+}
+
+.bulma-datepicker.is-danger .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #ff3860;
+}
+
+.bulma-datepicker.is-danger .datepicker-nav {
+  background: #ff3860;
+  color: #fff;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #ff3860;
+  border-color: #ff3860;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #ff3860;
+  color: #ff3860;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #ff3860;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #ff3860;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #ff3860;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #ff3860;
+  color: #fff;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-danger .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #ff3860;
+  color: #ff3860;
+}
+
+.bulma-datepicker.is-black-bis .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #121212;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-nav {
+  background: #121212;
+  color: #fff;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #121212;
+  border-color: #121212;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #121212;
+  color: #121212;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #121212;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #121212;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #121212;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #121212;
+  color: #fff;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-black-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #121212;
+  color: #121212;
+}
+
+.bulma-datepicker.is-black-ter .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #242424;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-nav {
+  background: #242424;
+  color: #fff;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #242424;
+  border-color: #242424;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #242424;
+  color: #242424;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #242424;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #242424;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #242424;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #242424;
+  color: #fff;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-black-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #242424;
+  color: #242424;
+}
+
+.bulma-datepicker.is-grey-darker .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #363636;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-nav {
+  background: #363636;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #363636;
+  border-color: #363636;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #363636;
+  color: #363636;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #363636;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #363636;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #363636;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #363636;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-grey-darker .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #363636;
+  color: #363636;
+}
+
+.bulma-datepicker.is-grey-dark .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-nav {
+  background: #4a4a4a;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #4a4a4a;
+  color: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-grey-dark .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #4a4a4a;
+  color: #4a4a4a;
+}
+
+.bulma-datepicker.is-grey .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey .datepicker-nav {
+  background: #7a7a7a;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #7a7a7a;
+  border-color: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #7a7a7a;
+  color: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #7a7a7a;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-grey .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #7a7a7a;
+  color: #7a7a7a;
+}
+
+.bulma-datepicker.is-grey-light .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-nav {
+  background: #b5b5b5;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #b5b5b5;
+  border-color: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #b5b5b5;
+  color: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #b5b5b5;
+  color: #fff;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-grey-light .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: #fff;
+  border-color: #b5b5b5;
+  color: #b5b5b5;
+}
+
+.bulma-datepicker.is-grey-lighter .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #dbdbdb;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-nav {
+  background: #dbdbdb;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #dbdbdb;
+  border-color: #dbdbdb;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #dbdbdb;
+  color: #dbdbdb;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #dbdbdb;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #dbdbdb;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #dbdbdb;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #dbdbdb;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-grey-lighter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #dbdbdb;
+  color: #dbdbdb;
+}
+
+.bulma-datepicker.is-white-ter .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-nav {
+  background: whitesmoke;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: whitesmoke;
+  border-color: whitesmoke;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: whitesmoke;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: whitesmoke;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: whitesmoke;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-white-ter .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: whitesmoke;
+  color: whitesmoke;
+}
+
+.bulma-datepicker.is-white-bis .bulma-datepicker-header .bulma-datepicker-selection-day {
+  color: #fafafa;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-nav {
+  background: #fafafa;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-active {
+  background: #fafafa;
+  border-color: #fafafa;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item.is-today {
+  border-color: #fafafa;
+  color: #fafafa;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date .date-item:hover {
+  border-color: #fafafa;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range {
+  background: #fafafa;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range:before,
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range::before {
+  background: #fafafa;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item {
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range .date-item.is-today {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-start .date-item,
+.bulma-datepicker.is-white-bis .datepicker-body .datepicker-dates .datepicker-days .datepicker-date.datepicker-range.datepicker-range-end .date-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #fafafa;
+  color: #fafafa;
+}
+
+.modal .bulma-datepicker {
+  display: block;
+  max-height: 95vh;
+  width: 22rem;
+  max-width: 95vw;
+  overflow-y: auto;
 }
 
 .carousel {
@@ -13075,7 +13814,7 @@ label.panel-block:hover {
 .is-checkradio[type=radio]:hover:not([disabled]) + label:before,
 .is-checkradio[type=checkbox]:hover:not([disabled]) + label::before,
 .is-checkradio[type=checkbox]:hover:not([disabled]) + label:before {
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=radio]:checked + label::before,
@@ -13200,7 +13939,7 @@ label.panel-block:hover {
           transform: rotate(45deg);
   border-width: 0.1rem;
   border-style: solid;
-  border-color: #676765;
+  border-color: #00d1b2;
   border-top: 0;
   border-left: 0;
 }
@@ -13513,35 +14252,35 @@ label.panel-block:hover {
 .is-checkradio[type=checkbox].is-primary.has-background-color + label::before,
 .is-checkradio[type=checkbox].is-primary.has-background-color + label:before {
   border-color: transparent !important;
-  background-color: #676765 !important;
+  background-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=checkbox].is-primary:hover:not([disabled]) + label::before,
 .is-checkradio[type=checkbox].is-primary:hover:not([disabled]) + label:before {
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=checkbox].is-primary:checked + label::after,
 .is-checkradio[type=checkbox].is-primary:checked + label:after {
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=checkbox].is-primary:checked.has-background-color + label::before,
 .is-checkradio[type=checkbox].is-primary:checked.has-background-color + label:before {
   border-color: transparent !important;
-  background-color: #676765 !important;
+  background-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=checkbox].is-primary:checked.has-background-color + label::after,
 .is-checkradio[type=checkbox].is-primary:checked.has-background-color + label:after {
   border-color: #fff !important;
-  background-color: #676765 !important;
+  background-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=checkbox].is-primary:checked.is-block + label {
   color: #fff;
-  border-color: #676765 !important;
-  background: #676765;
+  border-color: #00d1b2 !important;
+  background: #00d1b2;
 }
 
 .is-checkradio[type=checkbox].is-primary:checked.is-block + label::after,
@@ -13552,35 +14291,35 @@ label.panel-block:hover {
 .is-checkradio[type=checkbox].is-link.has-background-color + label::before,
 .is-checkradio[type=checkbox].is-link.has-background-color + label:before {
   border-color: transparent !important;
-  background-color: #64c2f0 !important;
+  background-color: #3273dc !important;
 }
 
 .is-checkradio[type=checkbox].is-link:hover:not([disabled]) + label::before,
 .is-checkradio[type=checkbox].is-link:hover:not([disabled]) + label:before {
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .is-checkradio[type=checkbox].is-link:checked + label::after,
 .is-checkradio[type=checkbox].is-link:checked + label:after {
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .is-checkradio[type=checkbox].is-link:checked.has-background-color + label::before,
 .is-checkradio[type=checkbox].is-link:checked.has-background-color + label:before {
   border-color: transparent !important;
-  background-color: #64c2f0 !important;
+  background-color: #3273dc !important;
 }
 
 .is-checkradio[type=checkbox].is-link:checked.has-background-color + label::after,
 .is-checkradio[type=checkbox].is-link:checked.has-background-color + label:after {
   border-color: #fff !important;
-  background-color: #64c2f0 !important;
+  background-color: #3273dc !important;
 }
 
 .is-checkradio[type=checkbox].is-link:checked.is-block + label {
   color: #fff;
-  border-color: #64c2f0 !important;
-  background: #64c2f0;
+  border-color: #3273dc !important;
+  background: #3273dc;
 }
 
 .is-checkradio[type=checkbox].is-link:checked.is-block + label::after,
@@ -13774,12 +14513,12 @@ label.panel-block:hover {
 
 .is-checkradio[type=checkbox]:indeterminate.is-primary + label::after,
 .is-checkradio[type=checkbox]:indeterminate.is-primary + label:after {
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .is-checkradio[type=checkbox]:indeterminate.is-link + label::after,
 .is-checkradio[type=checkbox]:indeterminate.is-link + label:after {
-  border-color: #64c2f0;
+  border-color: #3273dc;
 }
 
 .is-checkradio[type=checkbox]:indeterminate.is-info + label::after,
@@ -13810,7 +14549,7 @@ label.panel-block:hover {
 .is-checkradio[type=radio] + label::after,
 .is-checkradio[type=radio] + label:after {
   border-radius: 50%;
-  background: #676765;
+  background: #00d1b2;
   left: 0;
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
@@ -14028,25 +14767,25 @@ label.panel-block:hover {
 
 .is-checkradio[type=radio].is-primary.has-background-color + label::before,
 .is-checkradio[type=radio].is-primary.has-background-color + label:before {
-  border-color: #676765 !important;
-  background-color: #676765 !important;
+  border-color: #00d1b2 !important;
+  background-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=radio].is-primary:hover:not([disabled]) + label::before,
 .is-checkradio[type=radio].is-primary:hover:not([disabled]) + label:before {
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=radio].is-primary:checked + label::after,
 .is-checkradio[type=radio].is-primary:checked + label:after {
-  border-color: #676765 !important;
-  background-color: #676765 !important;
+  border-color: #00d1b2 !important;
+  background-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=radio].is-primary:checked.has-background-color + label::before,
 .is-checkradio[type=radio].is-primary:checked.has-background-color + label:before {
-  border-color: #676765 !important;
-  background-color: #676765 !important;
+  border-color: #00d1b2 !important;
+  background-color: #00d1b2 !important;
 }
 
 .is-checkradio[type=radio].is-primary:checked.has-background-color + label::after,
@@ -14057,25 +14796,25 @@ label.panel-block:hover {
 
 .is-checkradio[type=radio].is-link.has-background-color + label::before,
 .is-checkradio[type=radio].is-link.has-background-color + label:before {
-  border-color: #64c2f0 !important;
-  background-color: #64c2f0 !important;
+  border-color: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .is-checkradio[type=radio].is-link:hover:not([disabled]) + label::before,
 .is-checkradio[type=radio].is-link:hover:not([disabled]) + label:before {
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .is-checkradio[type=radio].is-link:checked + label::after,
 .is-checkradio[type=radio].is-link:checked + label:after {
-  border-color: #64c2f0 !important;
-  background-color: #64c2f0 !important;
+  border-color: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .is-checkradio[type=radio].is-link:checked.has-background-color + label::before,
 .is-checkradio[type=radio].is-link:checked.has-background-color + label:before {
-  border-color: #64c2f0 !important;
-  background-color: #64c2f0 !important;
+  border-color: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .is-checkradio[type=radio].is-link:checked.has-background-color + label::after,
@@ -14332,7 +15071,7 @@ label.panel-block:hover {
 
 .is-divider.is-primary,
 .is-divider-vertical.is-primary {
-  border-top-color: #676765;
+  border-top-color: #00d1b2;
 }
 
 .is-divider.is-primary[data-content]::after,
@@ -14340,17 +15079,17 @@ label.panel-block:hover {
 .is-divider-vertical.is-primary[data-content]::after,
 .is-divider-vertical.is-primary[data-content]::after {
   background: #fff;
-  color: #676765;
+  color: #00d1b2;
 }
 
 .is-divider.is-primary::before,
 .is-divider-vertical.is-primary::before {
-  border-left-color: #676765;
+  border-left-color: #00d1b2;
 }
 
 .is-divider.is-link,
 .is-divider-vertical.is-link {
-  border-top-color: #64c2f0;
+  border-top-color: #3273dc;
 }
 
 .is-divider.is-link[data-content]::after,
@@ -14358,12 +15097,12 @@ label.panel-block:hover {
 .is-divider-vertical.is-link[data-content]::after,
 .is-divider-vertical.is-link[data-content]::after {
   background: #fff;
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .is-divider.is-link::before,
 .is-divider-vertical.is-link::before {
-  border-left-color: #64c2f0;
+  border-left-color: #3273dc;
 }
 
 .is-divider.is-info,
@@ -14624,7 +15363,7 @@ label.panel-block:hover {
 }
 
 .iconpicker-modal .modal-card .modal-card-head {
-  background: #676765;
+  background: #00d1b2;
   color: white;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -14685,8 +15424,8 @@ label.panel-block:hover {
   top: 0;
   position: fixed;
   padding-top: 2em;
-  background: #676765;
-  background: #676765;
+  background: #00d1b2;
+  background: #00d1b2;
   z-index: 999998;
   transition: transform 0.35s ease-out, -webkit-transform 0.35s ease-out;
   will-change: transform;
@@ -14753,8 +15492,8 @@ label.panel-block:hover {
 }
 
 .pageloader.is-primary {
-  background-color: #676765;
-  background: #676765;
+  background-color: #00d1b2;
+  background: #00d1b2;
 }
 
 .pageloader.is-primary::after {
@@ -14768,8 +15507,8 @@ label.panel-block:hover {
 }
 
 .pageloader.is-link {
-  background-color: #64c2f0;
-  background: #64c2f0;
+  background-color: #3273dc;
+  background: #3273dc;
 }
 
 .pageloader.is-link::after {
@@ -15623,18 +16362,18 @@ label.panel-block:hover {
 }
 
 .pricing-table .pricing-plan.is-active .plan-price .plan-price-amount {
-  color: #676765;
+  color: #00d1b2;
 }
 
 .pricing-table .pricing-plan.is-active .plan-footer .button {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
   color: #fff;
 }
 
 .pricing-table .pricing-plan.is-active .plan-footer .button:hover,
 .pricing-table .pricing-plan.is-active .plan-footer .button.is-hovered {
-  background-color: #64c2f0;
+  background-color: #00c4a7;
   border-color: transparent;
   color: #fff;
 }
@@ -15654,7 +16393,7 @@ label.panel-block:hover {
 }
 
 .pricing-table .pricing-plan.is-active .plan-footer .button[disabled] {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
 }
 
@@ -15807,18 +16546,18 @@ label.panel-block:hover {
 }
 
 .pricing-table .pricing-plan.is-primary .plan-price .plan-price-amount {
-  color: #676765;
+  color: #00d1b2;
 }
 
 .pricing-table .pricing-plan.is-primary .plan-footer .button {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
   color: #fff;
 }
 
 .pricing-table .pricing-plan.is-primary .plan-footer .button:hover,
 .pricing-table .pricing-plan.is-primary .plan-footer .button.is-hovered {
-  background-color: #64c2f0;
+  background-color: #00c4a7;
   border-color: transparent;
   color: #fff;
 }
@@ -15838,17 +16577,17 @@ label.panel-block:hover {
 }
 
 .pricing-table .pricing-plan.is-primary .plan-footer .button[disabled] {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
   box-shadow: none;
 }
 
 .pricing-table .pricing-plan.is-link .plan-price .plan-price-amount {
-  color: #64c2f0;
+  color: #3273dc;
 }
 
 .pricing-table .pricing-plan.is-link .plan-footer .button {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   border-color: transparent;
   color: #fff;
 }
@@ -15875,7 +16614,7 @@ label.panel-block:hover {
 }
 
 .pricing-table .pricing-plan.is-link .plan-footer .button[disabled] {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   border-color: transparent;
   box-shadow: none;
 }
@@ -16241,7 +16980,7 @@ label.panel-block:hover {
 }
 
 .quickview-header.is-primary {
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .quickview-header.is-primary .title {
@@ -16249,7 +16988,7 @@ label.panel-block:hover {
 }
 
 .quickview-header.is-link {
-  background-color: #64c2f0;
+  background-color: #3273dc;
 }
 
 .quickview-header.is-link .title {
@@ -16404,25 +17143,25 @@ label.panel-block:hover {
 }
 
 .ribbon.is-primary:not(.is-outlined) {
-  background-color: #676765;
+  background-color: #00d1b2;
   border-color: transparent;
   color: #fff !important;
 }
 
 .ribbon.is-primary.is-outlined {
   background-color: transparent;
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .ribbon.is-link:not(.is-outlined) {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   border-color: transparent;
   color: #fff !important;
 }
 
 .ribbon.is-link.is-outlined {
   background-color: transparent;
-  border-color: #64c2f0;
+  border-color: #3273dc;
 }
 
 .ribbon.is-info:not(.is-outlined) {
@@ -16600,7 +17339,7 @@ input[type=range].slider::-ms-track {
 }
 
 input[type=range].slider::-ms-fill-lower {
-  background: #676765;
+  background: #00d1b2;
 }
 
 input[type=range].slider::-ms-fill-upper {
@@ -16960,46 +17699,46 @@ input[type=range].slider.is-dark .has-output-tooltip + output {
 }
 
 input[type=range].slider.is-primary::-moz-range-track {
-  background: #676765;
+  background: #00d1b2;
 }
 
 input[type=range].slider.is-primary::-webkit-slider-runnable-track {
-  background: #676765;
+  background: #00d1b2;
 }
 
 input[type=range].slider.is-primary::-ms-track {
-  background: #676765 !important;
+  background: #00d1b2 !important;
 }
 
 input[type=range].slider.is-primary::-ms-fill-lower {
-  background: #676765;
+  background: #00d1b2;
 }
 
 input[type=range].slider.is-primary.has-output + output,
 input[type=range].slider.is-primary .has-output-tooltip + output {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
 input[type=range].slider.is-link::-moz-range-track {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 input[type=range].slider.is-link::-webkit-slider-runnable-track {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 input[type=range].slider.is-link::-ms-track {
-  background: #64c2f0 !important;
+  background: #3273dc !important;
 }
 
 input[type=range].slider.is-link::-ms-fill-lower {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 input[type=range].slider.is-link.has-output + output,
 input[type=range].slider.is-link .has-output-tooltip + output {
-  background-color: #64c2f0;
+  background-color: #3273dc;
   color: #fff;
 }
 
@@ -17122,7 +17861,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .steps .step-item::before {
-  background: linear-gradient(to left, #dbdbdb 50%, #676765 50%);
+  background: linear-gradient(to left, #dbdbdb 50%, #00d1b2 50%);
   background-size: 200% 100%;
   background-position: right bottom;
 }
@@ -17137,8 +17876,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .steps .step-item.is-active .step-marker {
   background-color: white;
-  border-color: #676765;
-  color: #676765;
+  border-color: #00d1b2;
+  color: #00d1b2;
 }
 
 .steps .step-item.is-completed::before {
@@ -17147,7 +17886,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .steps .step-item.is-completed .step-marker {
   color: white;
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .steps .step-item .step-marker {
@@ -17267,7 +18006,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .steps .step-item.is-primary::before {
-  background: linear-gradient(to left, #dbdbdb 50%, #676765 50%);
+  background: linear-gradient(to left, #dbdbdb 50%, #00d1b2 50%);
   background-size: 200% 100%;
   background-position: right bottom;
 }
@@ -17278,8 +18017,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .steps .step-item.is-primary.is-active .step-marker {
   background-color: white;
-  border-color: #676765;
-  color: #676765;
+  border-color: #00d1b2;
+  color: #00d1b2;
 }
 
 .steps .step-item.is-primary.is-completed::before {
@@ -17288,11 +18027,11 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .steps .step-item.is-primary.is-completed .step-marker {
   color: #fff;
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .steps .step-item.is-link::before {
-  background: linear-gradient(to left, #dbdbdb 50%, #64c2f0 50%);
+  background: linear-gradient(to left, #dbdbdb 50%, #3273dc 50%);
   background-size: 200% 100%;
   background-position: right bottom;
 }
@@ -17303,8 +18042,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .steps .step-item.is-link.is-active .step-marker {
   background-color: white;
-  border-color: #64c2f0;
-  color: #64c2f0;
+  border-color: #3273dc;
+  color: #3273dc;
 }
 
 .steps .step-item.is-link.is-completed::before {
@@ -17313,7 +18052,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .steps .step-item.is-link.is-completed .step-marker {
   color: #fff;
-  background-color: #64c2f0;
+  background-color: #3273dc;
 }
 
 .steps .step-item.is-info::before {
@@ -17692,7 +18431,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox]:checked + label::before,
 .switch[type=checkbox]:checked + label:before {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox]:checked + label::after {
@@ -17719,12 +18458,12 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .switch[type=checkbox].is-outlined:checked + label::before,
 .switch[type=checkbox].is-outlined:checked + label:before {
   background-color: transparent;
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .switch[type=checkbox].is-outlined:checked + label::after,
 .switch[type=checkbox].is-outlined:checked + label:after {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-thin + label::before,
@@ -17807,7 +18546,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox].is-small:checked + label::before,
 .switch[type=checkbox].is-small:checked + label:before {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-small:checked + label::after {
@@ -17834,12 +18573,12 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .switch[type=checkbox].is-small.is-outlined:checked + label::before,
 .switch[type=checkbox].is-small.is-outlined:checked + label:before {
   background-color: transparent;
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .switch[type=checkbox].is-small.is-outlined:checked + label::after,
 .switch[type=checkbox].is-small.is-outlined:checked + label:after {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-small.is-thin + label::before,
@@ -17922,7 +18661,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox].is-medium:checked + label::before,
 .switch[type=checkbox].is-medium:checked + label:before {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-medium:checked + label::after {
@@ -17949,12 +18688,12 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .switch[type=checkbox].is-medium.is-outlined:checked + label::before,
 .switch[type=checkbox].is-medium.is-outlined:checked + label:before {
   background-color: transparent;
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .switch[type=checkbox].is-medium.is-outlined:checked + label::after,
 .switch[type=checkbox].is-medium.is-outlined:checked + label:after {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-medium.is-thin + label::before,
@@ -18037,7 +18776,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox].is-large:checked + label::before,
 .switch[type=checkbox].is-large:checked + label:before {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-large:checked + label::after {
@@ -18064,12 +18803,12 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .switch[type=checkbox].is-large.is-outlined:checked + label::before,
 .switch[type=checkbox].is-large.is-outlined:checked + label:before {
   background-color: transparent;
-  border-color: #676765;
+  border-color: #00d1b2;
 }
 
 .switch[type=checkbox].is-large.is-outlined:checked + label::after,
 .switch[type=checkbox].is-large.is-outlined:checked + label:after {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-large.is-thin + label::before,
@@ -18243,18 +18982,18 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox].is-primary:checked + label::before,
 .switch[type=checkbox].is-primary:checked + label:before {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-primary.is-outlined:checked + label::before,
 .switch[type=checkbox].is-primary.is-outlined:checked + label:before {
   background-color: transparent;
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .switch[type=checkbox].is-primary.is-outlined:checked + label::after,
 .switch[type=checkbox].is-primary.is-outlined:checked + label:after {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-primary.is-thin.is-outlined + label::after,
@@ -18264,34 +19003,34 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox].is-unchecked-primary + label::before,
 .switch[type=checkbox].is-unchecked-primary + label:before {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-unchecked-primary.is-outlined + label::before,
 .switch[type=checkbox].is-unchecked-primary.is-outlined + label:before {
   background-color: transparent;
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .switch[type=checkbox].is-unchecked-primary.is-outlined + label::after,
 .switch[type=checkbox].is-unchecked-primary.is-outlined + label:after {
-  background: #676765;
+  background: #00d1b2;
 }
 
 .switch[type=checkbox].is-link:checked + label::before,
 .switch[type=checkbox].is-link:checked + label:before {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 .switch[type=checkbox].is-link.is-outlined:checked + label::before,
 .switch[type=checkbox].is-link.is-outlined:checked + label:before {
   background-color: transparent;
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .switch[type=checkbox].is-link.is-outlined:checked + label::after,
 .switch[type=checkbox].is-link.is-outlined:checked + label:after {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 .switch[type=checkbox].is-link.is-thin.is-outlined + label::after,
@@ -18301,18 +19040,18 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .switch[type=checkbox].is-unchecked-link + label::before,
 .switch[type=checkbox].is-unchecked-link + label:before {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 .switch[type=checkbox].is-unchecked-link.is-outlined + label::before,
 .switch[type=checkbox].is-unchecked-link.is-outlined + label:before {
   background-color: transparent;
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .switch[type=checkbox].is-unchecked-link.is-outlined + label::after,
 .switch[type=checkbox].is-unchecked-link.is-outlined + label:after {
-  background: #64c2f0;
+  background: #3273dc;
 }
 
 .switch[type=checkbox].is-info:checked + label::before,
@@ -18479,7 +19218,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .tagsinput .tag.is-active {
-  background-color: #676765;
+  background-color: #00d1b2;
   color: #fff;
 }
 
@@ -18752,17 +19491,17 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .timeline .timeline-item .timeline-marker.is-primary {
-  background-color: #676765 !important;
-  border-color: #676765 !important;
+  background-color: #00d1b2 !important;
+  border-color: #00d1b2 !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-primary .image {
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-primary.is-icon {
-  background-color: #676765 !important;
-  border-color: #676765 !important;
+  background-color: #00d1b2 !important;
+  border-color: #00d1b2 !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-primary.is-icon > i {
@@ -18771,7 +19510,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .timeline .timeline-item .timeline-marker.is-primary.is-outlined {
   background-color: white !important;
-  border-color: #676765 !important;
+  border-color: #00d1b2 !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-primary.is-outlined .image {
@@ -18783,21 +19522,21 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .timeline .timeline-item .timeline-marker.is-primary.is-outlined.is-icon > i {
-  color: #676765 !important;
+  color: #00d1b2 !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-link {
-  background-color: #64c2f0 !important;
-  border-color: #64c2f0 !important;
+  background-color: #3273dc !important;
+  border-color: #3273dc !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-link .image {
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-link.is-icon {
-  background-color: #64c2f0 !important;
-  border-color: #64c2f0 !important;
+  background-color: #3273dc !important;
+  border-color: #3273dc !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-link.is-icon > i {
@@ -18806,7 +19545,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .timeline .timeline-item .timeline-marker.is-link.is-outlined {
   background-color: white !important;
-  border-color: #64c2f0 !important;
+  border-color: #3273dc !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-link.is-outlined .image {
@@ -18818,7 +19557,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .timeline .timeline-item .timeline-marker.is-link.is-outlined.is-icon > i {
-  color: #64c2f0 !important;
+  color: #3273dc !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-info {
@@ -18987,11 +19726,11 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .timeline .timeline-item.is-primary::before {
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .timeline .timeline-item.is-link::before {
-  background-color: #64c2f0;
+  background-color: #3273dc;
 }
 
 .timeline .timeline-item.is-info::before {
@@ -19113,11 +19852,11 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .timeline.is-centered .timeline-item.is-primary::before {
-  background-color: #676765;
+  background-color: #00d1b2;
 }
 
 .timeline.is-centered .timeline-item.is-link::before {
-  background-color: #64c2f0;
+  background-color: #3273dc;
 }
 
 .timeline.is-centered .timeline-item.is-info::before {
@@ -19201,6 +19940,15 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .timeline.is-rtl .timeline-item .timeline-content {
   padding: 1em 2em 0 0;
   text-align: right;
+}
+
+.timeline.no-headers .timeline-item.is-first::before {
+  height: calc(100% - 1.2rem);
+  top: 1.2rem;
+}
+
+.timeline.no-headers .timeline-item.is-last::before {
+  height: 1.2rem;
 }
 
 .tooltip {
@@ -20557,3 +21305,4 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
             transform: translate(-0.5rem, 50%) !important;
   }
 }
+
